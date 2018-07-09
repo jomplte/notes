@@ -38,42 +38,44 @@
 <span class="hljs-code">     </span>
 <span class="hljs-bullet">3. </span>在内存空间中给初始值</code></pre><p data-source-line="49">在类中直接声明的变量, 就是该类的属性, 属性的声明实际上是一种规范, 规范了该类的所有对象都有这几个属性(类声明了对象的共有属性)</p>
 <h4 data-source-line="51" id="新建类"><a class="markdownIt-Anchor" href="http://#新建类"></a>新建类</h4>
-<p data-source-line="52">新建个类就相当于新建了一个新的引用数据类型</p>
-<h4 data-source-line="54" id="新建对象"><a class="markdownIt-Anchor" href="http://#新建对象"></a>新建对象</h4>
-<p data-source-line="56"><code>类名 变量名(对象名) = new 类名()</code></p>
-<p data-source-line="58">某个类中的所有对象都是独立的, 改变其中一个对象的状态, 不会对其他对象产生影响</p>
-<p data-source-line="60">当一个对象创建好之后, 会把该对象的所有属性都划分好,换句话说对象的属性都是有初始值的</p>
-<p data-source-line="62"><strong>属性的别名</strong>: 实例变量 成员变量</p>
-<h3 data-source-line="64" id="方法"><a class="markdownIt-Anchor" href="http://#方法"></a>方法</h3>
-<pre data-source-line="65"><code class="hljs"><span class="zh-hans">访问权限修饰符</span> <span class="zh-hans">返回值类型</span> <span class="zh-hans">方法名</span>(<span class="zh-hans">参数列表</span>) {
+<p data-source-line="52">新建个类就相当于新建了一个新的引用数据类型
+类的全名是包名 + 变量名(class后面的), 变量名是类名的简写</p>
+<h4 data-source-line="55" id="新建对象"><a class="markdownIt-Anchor" href="http://#新建对象"></a>新建对象</h4>
+<p data-source-line="57"><code>类名 变量名(对象名) = new 类名()</code></p>
+<p data-source-line="59">某个类中的所有对象都是独立的, 改变其中一个对象的状态, 不会对其他对象产生影响</p>
+<p data-source-line="61">当一个对象创建好之后, 会把该对象的所有属性都划分好,换句话说对象的属性都是有初始值的</p>
+<p data-source-line="63"><strong>属性的别名</strong>: 实例变量 成员变量</p>
+<h4 data-source-line="65" id="方法"><a class="markdownIt-Anchor" href="http://#方法"></a>方法</h4>
+<pre data-source-line="66"><code class="hljs"><span class="zh-hans">访问权限修饰符</span> <span class="zh-hans">返回值类型</span> <span class="zh-hans">方法名</span>(<span class="zh-hans">参数列表</span>) {
        <span class="zh-hans">方法体</span><span class="hljs-comment">;</span>
    }
-</code></pre><p data-source-line="70">返回值: 代表该方法执行后的结果, 如果没有返回值, 该位置填 <code>void</code> 方法只有调用才会执行. 同一个方法可以调用多次</p>
-<h4 data-source-line="72" id="访问权限修饰符"><a class="markdownIt-Anchor" href="http://#访问权限修饰符"></a>访问权限修饰符</h4>
-<p data-source-line="74">可以修饰属性和方法, 用来规定某个属性或者方法的可访问范围</p>
-<ol data-source-line="75">
+</code></pre><p data-source-line="71">返回值: 代表该方法执行后的结果, 如果没有返回值, 该位置填 <code>void</code> 方法只有调用 (<code>对象.方法/属性</code>) 才会执行, 同一个方法可以调用多次</p>
+<h4 data-source-line="73" id="访问权限修饰符"><a class="markdownIt-Anchor" href="http://#访问权限修饰符"></a>访问权限修饰符</h4>
+<p data-source-line="75">可以修饰属性和方法, 用来规定某个属性或者方法的可访问范围</p>
+<ol data-source-line="76">
 <li><code>private</code> 只能在同类下访问</li>
 <li>什么也不写, 默认的, 只能在同一个包下访问</li>
 <li><code>protected</code> 受保护的, 同包其他类或子类有访问权限</li>
 <li><code>public</code> 公开的, 在任何位置都可以访问</li>
 <li>Java规定，类的权限设定会约束类的成员上的权限设定</li>
+<li>只有public 和 默认的 可以修饰类</li>
 </ol>
-<pre data-source-line="81"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AnyClass</span> {</span>
+<pre data-source-line="83"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AnyClass</span> {</span>
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doString</span><span class="hljs-params">()</span> </span>{
        <span class="hljs-comment">// ...</span>
    }
 }
-</code></pre><p data-source-line="88"><strong>等同于</strong> 此时，即使AnyClass类中的doString()方法又被设置成public访问权限，其访问权限也与AnyClass类的访问权限相同。因为Java规定，类的权限设定会约束类的成员上的权限设定，所以上述代码等同于下面的代码：</p>
-<pre data-source-line="89"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AnyClass</span> {</span>
+</code></pre><p data-source-line="90"><strong>等同于</strong> 此时，即使AnyClass类中的doString()方法又被设置成public访问权限，其访问权限也与AnyClass类的访问权限相同。因为Java规定，类的权限设定会约束类的成员上的权限设定，所以上述代码等同于下面的代码：</p>
+<pre data-source-line="91"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AnyClass</span> {</span>
     <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">doString</span><span class="hljs-params">()</span> </span>{
         <span class="hljs-comment">// ...</span>
     }
 }
-</code></pre><ol data-source-line="97" start="6">
+</code></pre><ol data-source-line="99" start="7">
 <li>在以后的开发过程中, 所有的属性和方法的访问权限越小越好</li>
 </ol>
-<h3 data-source-line="99" id="购物平台代码"><a class="markdownIt-Anchor" href="http://#购物平台代码"></a>购物平台代码</h3>
-<pre data-source-line="100"><code class="hljs"><span class="hljs-keyword">package</span> com.lanou3g.oop;
+<h3 data-source-line="101" id="购物平台代码"><a class="markdownIt-Anchor" href="http://#购物平台代码"></a>购物平台代码</h3>
+<pre data-source-line="102"><code class="hljs"><span class="hljs-keyword">package</span> com.lanou3g.oop;
 <span class="hljs-keyword">import</span> com.lanou3g.oop.Goods;
 <span class="hljs-comment">/**
  * <span class="zh-hans">顾客类</span>
@@ -143,7 +145,7 @@
         System.out.println(<span class="hljs-string">"<span class="zh-hans">购物车是空的</span>, <span class="zh-hans">快去添加购物车吧</span>"</span>);
     }
 }
-</code></pre><pre data-source-line="172"><code class="hljs"><span class="hljs-keyword">package</span> com.lanou3g.oop;
+</code></pre><pre data-source-line="174"><code class="hljs"><span class="hljs-keyword">package</span> com.lanou3g.oop;
 <span class="hljs-comment">/**
  * Created by dllo on 18/7/6.
  */</span>
@@ -155,7 +157,7 @@
         System.out.printf(<span class="hljs-string">"<span class="zh-hans">商品名称</span>: %s, <span class="zh-hans">单价</span>: %s\n"</span>,name,price);
     }
 }
-</code></pre><pre data-source-line="186"><code class="hljs"><span class="hljs-keyword">package</span> com.lanou3g.oop;
+</code></pre><pre data-source-line="188"><code class="hljs"><span class="hljs-keyword">package</span> com.lanou3g.oop;
 <span class="hljs-comment">/**
  * Created by dllo on 18/7/6.
  */</span>
