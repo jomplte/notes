@@ -80,8 +80,9 @@
         <span class="hljs-keyword">byte</span>[] bytes = str.getBytes();
         <span class="hljs-comment">// <span class="zh-hans">把字符串转换为字符数组</span></span>
         <span class="hljs-keyword">char</span>[] chars = str.toCharArray();
-        <span class="hljs-comment">// <span class="zh-hans">根据正则表达式把字符串分割为字符串的数组</span></span>
+        <span class="hljs-comment">// <span class="zh-hans">根据正则表达式把字符串分割为字符串的数组</span>, <span class="zh-hans">如果想定义多个分隔符，可使用“</span>|<span class="zh-hans">”</span>, s.split(",", 2), <span class="zh-hans">根据</span>","<span class="zh-hans">拆分字符串，拆分份数为</span>2<span class="zh-hans">份</span></span>
         String[] strings = str.split(<span class="hljs-string">"\\."</span>);    <span class="hljs-comment">// <span class="zh-hans">正则表达式中的</span>"<span class="zh-hans">点</span>"<span class="zh-hans">有特殊含义</span></span>
+        
         System.out.println(Arrays.toString(strings));
         <span class="hljs-comment">// <span class="zh-hans">判断两个字符串是否一样</span></span>
         System.out.println(str.equals(s));
