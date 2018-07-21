@@ -65,16 +65,15 @@
 <pre data-source-line="73"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Y</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-keyword">float</span> a = <span class="hljs-number">0.08f</span>;
-        <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;
 
-        <span class="hljs-keyword">for</span> (j  = <span class="hljs-number">0</span>; a &lt; <span class="hljs-number">8848130f</span>; j++){
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j  = <span class="hljs-number">0</span>; a &lt; <span class="hljs-number">8848130f</span>; j++){
             a *= <span class="hljs-number">2</span>;     <span class="hljs-comment">// <span class="zh-hans">一张纸的厚度大约是</span>0.08mm,<span class="zh-hans">对折多少次之后能达到珠穆朗玛峰的高度</span>(8848.13<span class="zh-hans">米</span>)</span>
         }
         System.out.println(j);
     }
 }
-</code></pre><h4 data-source-line="86" id="冒泡排序循环嵌套"><a class="markdownIt-Anchor" href="http://#冒泡排序循环嵌套"></a>冒泡排序(循环嵌套)</h4>
-<pre data-source-line="87"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomeWork3_6</span> </span>{
+</code></pre><h4 data-source-line="85" id="冒泡排序循环嵌套"><a class="markdownIt-Anchor" href="http://#冒泡排序循环嵌套"></a>冒泡排序(循环嵌套)</h4>
+<pre data-source-line="86"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomeWork3_6</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">6</span>, <span class="hljs-number">3</span>, <span class="hljs-number">8</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>};
         System.out.println(<span class="hljs-string">"<span class="zh-hans">排序前数组为：</span>"</span>);
@@ -97,11 +96,11 @@
         }
     }
 }
-</code></pre><p data-source-line="113"><code>break</code> 在循环过程中, 如果遇到break, 那么会直接终止循环</p>
-<p data-source-line="115"><code>continue</code> 遇到continue, 会停止当前的循环, 直接进行下次循环(把当前循环的内容<mark>过滤</mark>掉)</p>
-<p data-source-line="117"><strong>阶乘定义:</strong> <code>f(n) n * f(n - 1)</code></p>
-<p data-source-line="119"><strong>质数的定义</strong>：质数（prime number）又称为素数，有无限多个。质数定义在大于1的自然数中，除了1和它本身以外不会再有其它因数的数称为质数。</p>
-<ol data-source-line="121">
+</code></pre><p data-source-line="112"><code>break</code> 在循环过程中, 如果遇到break, 那么会直接终止循环</p>
+<p data-source-line="114"><code>continue</code> 遇到continue, 会停止当前的循环, 直接进行下次循环(把当前循环的内容<mark>过滤</mark>掉)</p>
+<p data-source-line="116"><strong>阶乘定义:</strong> <code>f(n) n * f(n - 1)</code></p>
+<p data-source-line="118"><strong>质数的定义</strong>：质数（prime number）又称为素数，有无限多个。质数定义在大于1的自然数中，除了1和它本身以外不会再有其它因数的数称为质数。</p>
+<ol data-source-line="120">
 <li>
 <p>从2开始，2是最小的质数</p>
 </li>
@@ -112,8 +111,8 @@
 <p>将其开方，若从3到开方向下取整之间的所有奇数都不能将其整除，则说明该数为质数。</p>
 </li>
 </ol>
-<p data-source-line="127">至于为什么只用除到其平方根？因为如果一个数不是素数是合数，那么一定可以由两个自然数相乘得到，其中一个大于或等于它的平方根，一个小于或等于它的平方根。并且成对出现。</p>
-<pre data-source-line="129"><code class="hljs"><span class="hljs-keyword">import</span> java.util.Scanner;
+<p data-source-line="126">至于为什么只用除到其平方根？因为如果一个数不是素数是合数，那么一定可以由两个自然数相乘得到，其中一个大于或等于它的平方根，一个小于或等于它的平方根。并且成对出现。</p>
+<pre data-source-line="128"><code class="hljs"><span class="hljs-keyword">import</span> java.util.Scanner;
 <span class="hljs-comment">/**
  * Created by dllo on 18/7/5.
  */</span>
@@ -136,7 +135,7 @@
         System.out.println(a + <span class="hljs-string">" <span class="zh-hans">是否为质数</span>:"</span> + j.b(a));
     }
 }
-</code></pre><pre data-source-line="154"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">L</span> </span>{
+</code></pre><pre data-source-line="153"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">L</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
         <span class="hljs-keyword">int</span> n = <span class="hljs-number">120</span>;
 
@@ -149,6 +148,25 @@
         }
     }
 }
-</code></pre><p data-source-line="170"><code>Arrays.sort(array)</code> 对数组升序排序</p>
-<p data-source-line="172"><code>Arrays.toString(array)</code> 用于将字符串生成器转换为字符串，转换后字符串生成器的值不变</p>
+</code></pre><h4 data-source-line="168" id="输入10个数求和"><a class="markdownIt-Anchor" href="http://#输入10个数求和"></a>输入10个数求和</h4>
+<pre data-source-line="169"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ScannerDemo</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);
+        <span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+            System.out.println(<span class="hljs-string">"<span class="zh-hans">请输入第</span>"</span> + (i + <span class="hljs-number">1</span>) + <span class="hljs-string">"<span class="zh-hans">个数</span>:"</span>);
+            <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">int</span> a = sc.nextInt();
+            sum += a;
+            } <span class="hljs-keyword">catch</span> (InputMismatchException e) {
+                System.out.println(<span class="hljs-string">"<span class="zh-hans">输入错误</span>, <span class="zh-hans">请重新输入数字</span>"</span>);
+                i--;
+                sc = <span class="hljs-keyword">new</span> Scanner(System.in);
+            }
+        }
+        System.out.println(sum);
+    }
+}
+</code></pre><p data-source-line="189"><code>Arrays.sort(array)</code> 对数组升序排序</p>
+<p data-source-line="191"><code>Arrays.toString(array)</code> 用于将字符串生成器转换为字符串，转换后字符串生成器的值不变</p>
 </div></article><body></body></html>

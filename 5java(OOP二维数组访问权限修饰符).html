@@ -61,10 +61,10 @@
 <ol data-source-line="84">
 <li><code>private</code> 只能在同类下访问</li>
 <li>什么也不写, 默认的, 只能在同一个包下访问</li>
-<li><code>protected</code> 受保护的, 同包其他类或子类有访问权限</li>
+<li><code>protected</code> 受保护的, 同包其他类或子类有访问权限, 子类可以不与其同包</li>
 <li><code>public</code> 公开的, 在任何位置都可以访问</li>
 <li>Java规定，类的权限设定会约束类的成员上的权限设定</li>
-<li>只有public 和 默认的 可以修饰类</li>
+<li>只有public 和 默认的 可以修饰类(不是内部类)</li>
 </ol>
 <pre data-source-line="91"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AnyClass</span> {</span>
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doString</span><span class="hljs-params">()</span> </span>{

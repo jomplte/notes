@@ -7,29 +7,30 @@
 <h3 data-source-line="13" id="常用shell命令"><a class="markdownIt-Anchor" href="http://#常用shell命令"></a>常用shell命令</h3>
 <p data-source-line="15"><code>open .</code> 打开当前所在文件夹子目录</p>
 <p data-source-line="17"><code>pwd</code> 查看当前目录</p>
-<p data-source-line="19"><code>mkdir</code> 新建文件夹</p>
-<p data-source-line="21"><code>touch</code> 新建文件</p>
-<p data-source-line="23"><code>ls</code> 查看当前目录文件夹及文件不包括隐藏文件</p>
-<p data-source-line="25"><code>ls -a</code> 查看当前目录文件夹及文件包括隐藏文件</p>
-<p data-source-line="27"><code>ls -l</code> 查看<mark>详细信息</mark>(drwxr-xr-x)rwx分别为:读写执行</p>
-<p data-source-line="29"><code>cd</code> 进入下层目录</p>
-<p data-source-line="31"><code>cd ..</code> 进入上层目录</p>
-<p data-source-line="33"><code>cd /Users/dllo/Desktop</code>
+<p data-source-line="19"><code>cat</code> 查看内容</p>
+<p data-source-line="21"><code>mkdir</code> 新建文件夹</p>
+<p data-source-line="23"><code>touch</code> 新建文件</p>
+<p data-source-line="25"><code>ls</code> 查看当前目录文件夹及文件不包括隐藏文件</p>
+<p data-source-line="27"><code>ls -a</code> 查看当前目录文件夹及文件包括隐藏文件</p>
+<p data-source-line="29"><code>ls -l</code> 查看<mark>详细信息</mark>(drwxr-xr-x)rwx分别为:读写执行</p>
+<p data-source-line="31"><code>cd</code> 进入下层目录</p>
+<p data-source-line="33"><code>cd ..</code> 进入上层目录</p>
+<p data-source-line="35"><code>cd /Users/dllo/Desktop</code>
 <code>cd ~/Desktop</code> 进入桌面绝对路径</p>
-<p data-source-line="36"><code>rm -rf Lesson</code> 递归直接删除(慎用)</p>
-<p data-source-line="38"><code>mv</code> 移动/重命名</p>
-<p data-source-line="40"><code>mv A.txt ../Desktop</code> (移动)</p>
-<p data-source-line="42"><code>mv A.txt ./B.txt</code> (重命名)</p>
-<p data-source-line="44"><code>cp</code> 复制</p>
-<p data-source-line="46"><code>./</code> 当前路径</p>
-<p data-source-line="48"><code>clear</code> 清屏</p>
-<p data-source-line="50"><code>pwd &gt; A.txt</code> <code>ls -al &gt; A.txt</code> 将内容写入文本文档A</p>
-<p data-source-line="52"><code>ls -a ~/ | grep git</code> 查看个人目录下关于git的文件</p>
-<h3 data-source-line="54" id="vi三种模式"><a class="markdownIt-Anchor" href="http://#vi三种模式"></a>vi三种模式:</h3>
-<ol data-source-line="56">
+<p data-source-line="38"><code>rm -rf Lesson</code> 递归直接删除(慎用)</p>
+<p data-source-line="40"><code>mv</code> 移动/重命名</p>
+<p data-source-line="42"><code>mv A.txt ../Desktop</code> (移动)</p>
+<p data-source-line="44"><code>mv A.txt ./B.txt</code> (重命名)</p>
+<p data-source-line="46"><code>cp</code> 复制</p>
+<p data-source-line="48"><code>./</code> 当前路径</p>
+<p data-source-line="50"><code>clear</code> 清屏</p>
+<p data-source-line="52"><code>pwd &gt; A.txt</code> <code>ls -al &gt; A.txt</code> 将内容写入文本文档A</p>
+<p data-source-line="54"><code>ls -a ~/ | grep git</code> 查看个人目录下关于git的文件</p>
+<h3 data-source-line="56" id="vi三种模式"><a class="markdownIt-Anchor" href="http://#vi三种模式"></a>vi三种模式:</h3>
+<ol data-source-line="58">
 <li>命令模式 (vi)</li>
 </ol>
-<ul data-source-line="58">
+<ul data-source-line="60">
 <li>N dd : 删除N行内容</li>
 <li>hjkl : 移动光标</li>
 <li>x : 删除光标位置的字符</li>
@@ -40,19 +41,19 @@
 <li>G: 光标移动到尾行行首</li>
 <li>u : 撤销</li>
 </ul>
-<ol data-source-line="68" start="2">
+<ol data-source-line="70" start="2">
 <li>插入模式</li>
 </ol>
-<ul data-source-line="70">
+<ul data-source-line="72">
 <li>i : 光标所在位置插入</li>
 <li>o : 另起一行插入</li>
 <li>a : 光标后一位位置插入</li>
 <li>Esc : 从插入模式进入命令模式</li>
 </ul>
-<ol data-source-line="75" start="3">
+<ol data-source-line="77" start="3">
 <li>底行命令模式(:)</li>
 </ol>
-<ul data-source-line="77">
+<ul data-source-line="79">
 <li>set nu : 显示文档行号</li>
 <li>w : 保存文档</li>
 <li>q : 退出vi状态.(要先保存)</li>

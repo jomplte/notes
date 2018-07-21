@@ -2,12 +2,25 @@
 <ol data-source-line="3">
 <li>如果一个类的有抽象方法, 那么该类一定是抽象类</li>
 <li>抽象类的作用就是规定了父类知道某个方法, 但是不知道具体怎么执行</li>
-<li>如果一个类(普通类)继承了抽象类, 那么<mark>必须重写</mark>抽象类的所有抽象方法</li>
+<li>如果一个类(普通类)继承了抽象类, 那么必须重写抽象类的所有抽象方法</li>
 <li>抽象类继承抽象类的时候, 根据需要重写抽象方法</li>
-<li>不能被实例化</li>
+<li>不能被实例化, 也就是不能创建其对象</li>
+<li>抽象方法前的修饰，不能使用private或static关键字。</li>
 </ol>
-<h5 data-source-line="9" id="抽象方法"><a class="markdownIt-Anchor" href="http://#抽象方法"></a>抽象方法</h5>
-<pre data-source-line="10"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Hero</span> </span>{    <span class="hljs-comment">// <span class="zh-hans">在</span>class<span class="zh-hans">前加</span> abstract</span>
+<pre data-source-line="10"><code class="hljs"><span class="hljs-comment">// <span class="zh-hans">匿名内部类</span></span>
+        <span class="hljs-comment">// <span class="zh-hans">代表创建了一个没名的类继承了</span>Hero<span class="zh-hans">类</span>, <span class="zh-hans">并且重写了两个方法</span></span>
+        Hero h4 = <span class="hljs-keyword">new</span> Hero(<span class="hljs-string">""</span>) {    <span class="hljs-comment">// Hero<span class="zh-hans">为抽象类</span></span>
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attack</span><span class="hljs-params">()</span> </span>{
+
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">()</span> </span>{
+
+            }
+</code></pre><h5 data-source-line="24" id="抽象方法"><a class="markdownIt-Anchor" href="http://#抽象方法"></a>抽象方法</h5>
+<pre data-source-line="25"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Hero</span> </span>{    <span class="hljs-comment">// <span class="zh-hans">在</span>class<span class="zh-hans">前加</span> abstract</span>
 
     <span class="hljs-keyword">private</span> String name;
 
@@ -23,8 +36,8 @@
 
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">()</span></span>;
 }
-</code></pre><h5 data-source-line="28" id="模板方法"><a class="markdownIt-Anchor" href="http://#模板方法"></a>模板方法</h5>
-<pre data-source-line="29"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Robot</span> </span>{
+</code></pre><h5 data-source-line="43" id="模板方法"><a class="markdownIt-Anchor" href="http://#模板方法"></a>模板方法</h5>
+<pre data-source-line="44"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Robot</span> </span>{
     <span class="hljs-comment">/**
      * <span class="zh-hans">模板方法</span>, <span class="zh-hans">定义了一个流程</span>, <span class="zh-hans">具体细节子类去实现</span>
      */</span>
@@ -38,12 +51,12 @@
         System.out.println(<span class="hljs-string">"<span class="zh-hans">组装大腿</span>"</span>);
         creatLeg();
     }
-        <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span>  <span class="hljs-title">creatHead</span><span class="hljs-params">()</span></span>;   <span class="hljs-comment">// protected, <span class="zh-hans">同包其他类或子类有访问权限</span>, <span class="zh-hans">避免了在主方法中调用</span>creatHead()<span class="zh-hans">等方法</span></span>
+        <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span>  <span class="hljs-title">creatHead</span><span class="hljs-params">()</span></span>;   <span class="hljs-comment">// protected, <span class="zh-hans">同包其他类或子类有访问权限</span>, <span class="zh-hans">避免了在主方法中调用</span>creatHead()<span class="zh-hans">等方法</span>, Main<span class="zh-hans">在包外</span>;</span>
         <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span>  <span class="hljs-title">creatBody</span><span class="hljs-params">()</span></span>;    
         <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span>  <span class="hljs-title">creatArm</span><span class="hljs-params">()</span></span>;
         <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span>  <span class="hljs-title">creatLeg</span><span class="hljs-params">()</span></span>;
 }
-</code></pre><pre data-source-line="50"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WoodRobot</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Robot</span> </span>{
+</code></pre><pre data-source-line="65"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WoodRobot</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Robot</span> </span>{
     <span class="hljs-meta">@Override</span>
     <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">creatHead</span><span class="hljs-params">()</span> </span>{
         System.out.println(<span class="hljs-string">"<span class="zh-hans">圆桌面做脑袋</span>"</span>);

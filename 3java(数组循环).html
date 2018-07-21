@@ -67,11 +67,47 @@ System.out.<span class="hljs-built_in">println</span>(<span class="hljs-keyword"
         System.out.println(<span class="hljs-string">"<span class="zh-hans">最小值是</span>:"</span> + min);
     }
 }
-</code></pre><h3 data-source-line="89" id="dowhile循环"><a class="markdownIt-Anchor" href="http://#dowhile循环"></a>do...while循环</h3>
-<pre data-source-line="90"><code class="hljs"><span class="hljs-keyword">do</span> {
+</code></pre><h3 data-source-line="89" id="switch"><a class="markdownIt-Anchor" href="http://#switch"></a>switch</h3>
+<pre data-source-line="90"><code class="hljs"><span class="hljs-keyword">import</span> java.util.Scanner;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GetSwitch</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        Scanner scan = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"<span class="zh-hans">请输入今天星期几：</span>"</span>);
+        <span class="hljs-keyword">int</span> week = scan.nextInt();
+        
+        <span class="hljs-keyword">switch</span> (week) {     <span class="hljs-comment">// switch<span class="zh-hans">语句中表达式的值必须是整型或字符型，常量值</span>1~n<span class="zh-hans">必须也是整型或字符型。</span></span>
+        <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+            System.out.println(<span class="hljs-string">"Monday"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+            System.out.println(<span class="hljs-string">"Tuesday"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+            System.out.println(<span class="hljs-string">"Wednesday"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+            System.out.println(<span class="hljs-string">"Thursday"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+            System.out.println(<span class="hljs-string">"Friday"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+            System.out.println(<span class="hljs-string">"Saturday"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:
+            System.out.println(<span class="hljs-string">"Sunday"</span>);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">default</span>:
+            System.out.println(<span class="hljs-string">"Sorry,I don't konw"</span>);
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+}
+</code></pre><h3 data-source-line="127" id="dowhile循环"><a class="markdownIt-Anchor" href="http://#dowhile循环"></a>do...while循环</h3>
+<pre data-source-line="128"><code class="hljs"><span class="hljs-keyword">do</span> {
     <span class="zh-hans">代码块</span>; <span class="hljs-comment">// <span class="zh-hans">先执行一遍循环体</span>, <span class="zh-hans">然后进行条件的判断</span>.<span class="zh-hans">如果条件为</span>true, <span class="zh-hans">则再次执行循环体</span></span>
 } <span class="hljs-keyword">while</span>();
-</code></pre><pre data-source-line="95"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">G</span> </span>{
+</code></pre><pre data-source-line="133"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">G</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-keyword">int</span> health = <span class="hljs-number">100</span>;
         <span class="hljs-keyword">int</span> attack =<span class="hljs-number">13</span>;
@@ -87,11 +123,11 @@ System.out.<span class="hljs-built_in">println</span>(<span class="hljs-keyword"
         System.out.println(<span class="hljs-string">"<span class="zh-hans">需要打怪的次数是</span>"</span> + times);
     }
 }
-</code></pre><h3 data-source-line="113" id="for循环"><a class="markdownIt-Anchor" href="http://#for循环"></a>for循环</h3>
-<pre data-source-line="114"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="zh-hans">循环变量初始化</span><span class="hljs-number">1</span>; <span class="zh-hans">循环条件</span><span class="hljs-number">2</span>; <span class="zh-hans">循环变量自增</span><span class="hljs-number">3</span>;){
+</code></pre><h3 data-source-line="151" id="for循环"><a class="markdownIt-Anchor" href="http://#for循环"></a>for循环</h3>
+<pre data-source-line="152"><code class="hljs"><span class="hljs-keyword">for</span> (<span class="zh-hans">循环变量初始化</span><span class="hljs-number">1</span>; <span class="zh-hans">循环条件</span><span class="hljs-number">2</span>; <span class="zh-hans">循环变量自增</span><span class="hljs-number">3</span>;){
     <span class="zh-hans">循环体</span><span class="hljs-number">4</span>;    <span class="hljs-comment">// 1 -&gt; 2 -&gt; 4 -&gt; 3 -&gt; 2 -&gt; 4 -&gt; 3 ...</span>
 }
-</code></pre><pre data-source-line="119"><code class="hljs"><span class="hljs-keyword">public</span> class E {
+</code></pre><pre data-source-line="157"><code class="hljs"><span class="hljs-keyword">public</span> class E {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main(<span class="hljs-keyword">String</span>[] args) {
         <span class="hljs-keyword">int</span>[] arr = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>};
         <span class="hljs-keyword">int</span> <span class="hljs-built_in">max</span> = arr[<span class="hljs-number">0</span>];
@@ -117,6 +153,6 @@ System.out.<span class="hljs-built_in">println</span>(<span class="hljs-keyword"
         System.out.<span class="hljs-built_in">println</span>(<span class="hljs-string">"<span class="zh-hans">最小值是</span>:"</span> + <span class="hljs-built_in">min</span>);
     }
 }
-</code></pre><h5 data-source-line="147" id="变量的作用域"><a class="markdownIt-Anchor" href="http://#变量的作用域"></a>变量的作用域:</h5>
-<p data-source-line="148">变量生效的范围, 从变量声明时开始, 一直到变量声明时所在的{}的末尾</p>
+</code></pre><h5 data-source-line="185" id="变量的作用域"><a class="markdownIt-Anchor" href="http://#变量的作用域"></a>变量的作用域:</h5>
+<p data-source-line="186">变量生效的范围, 从变量声明时开始, 一直到变量声明时所在的{}的末尾</p>
 </div></article><body></body></html>

@@ -29,10 +29,14 @@
 <li>用来判断某个字符串是不是符合某个规则</li>
 <li>在某个字符串中查找某个规则的子串</li>
 </ol>
-<p data-source-line="36"><code>\\s</code> 匹配所有空白 空格/换行/制表符</p>
-<p data-source-line="38"><code>\\w</code> 任何子类字符, 包括下划线与[a-zA-Z0-9_]等效</p>
-<p data-source-line="40"><code>\\d</code> 数字</p>
-<pre data-source-line="41"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">E</span> </span>{
+<p data-source-line="36">unicode编码，一种全世界语言都包括的一种编码。（国际化功能中常常用到）</p>
+<p data-source-line="38"><code>[\u4E00-\u9FA5]</code> 汉字</p>
+<p data-source-line="40"><code>[\uFF00-\uFFFF]</code> 全角符号</p>
+<p data-source-line="42"><code>[\u0000-\u00FF]</code> 半角符号</p>
+<p data-source-line="44"><code>\\s</code> 匹配所有空白 空格/换行/制表符</p>
+<p data-source-line="46"><code>\\w</code> 任何子类字符, 包括下划线与[a-zA-Z0-9_]等效</p>
+<p data-source-line="48"><code>\\d</code> 数字</p>
+<pre data-source-line="50"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">E</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         String str = <span class="hljs-string">"asfefo* jhkjhkjnlfooooonkjn$     knkjnfoonjklhnkfojkn"</span>;
         <span class="hljs-comment">// + <span class="zh-hans">代表匹配前面的字符</span>o, 1<span class="zh-hans">个或多个</span></span>
@@ -44,7 +48,7 @@
         String[] string3 = str.split(<span class="hljs-string">"[* ;$]"</span>);       <span class="hljs-comment">//<span class="zh-hans">一样</span></span>
         String[] string4 = str.split(<span class="hljs-string">"[* ;$]+"</span>);
         String[] string5 = str.split(<span class="hljs-string">"[* ;$]{2}"</span>);  <span class="hljs-comment">//2<span class="zh-hans">个</span>[ ]<span class="zh-hans">里的</span></span>
-        String[] string6 = str.split(<span class="hljs-string">"[* ;$]{2,3}"</span>); <span class="hljs-comment">//2<span class="zh-hans">个</span>3<span class="zh-hans">个</span></span>
+        String[] string6 = str.split(<span class="hljs-string">"[* ;$]{2,5}"</span>); <span class="hljs-comment">//<span class="zh-hans">至少</span>2<span class="zh-hans">个</span>, <span class="zh-hans">至多</span>5<span class="zh-hans">个</span></span>
         String[] string7 = str.split(<span class="hljs-string">"[* ;$]{2,}"</span>);  <span class="hljs-comment">//2<span class="zh-hans">到多个</span></span>
 
         System.out.println(Arrays.toString(string));
@@ -57,7 +61,7 @@
         System.out.println(Arrays.toString(string7));
 
         String email = <span class="hljs-string">"abcd123@163.com"</span>;
-        String rex = <span class="hljs-string">"[a-zA-Z0-9]{5,}+@[a-zA-Z0-9]+\\.com"</span>;  <span class="hljs-comment">//<span class="zh-hans">一样</span></span>
+        String rex = <span class="hljs-string">"[a-zA-Z0-9]{5,}+@[a-zA-Z0-9]+\\.com"</span>;  <span class="hljs-comment">//<span class="zh-hans">一样</span>, <span class="zh-hans">注意</span>+@<span class="zh-hans">不能有空格</span></span>
         String rex1 = <span class="hljs-string">"[\\w]{5,}+@[\\w]+\\.com"</span>;            <span class="hljs-comment">//<span class="zh-hans">一样</span></span>
         System.out.println(email.matches(rex));
         System.out.println(email.matches(rex1));
@@ -65,12 +69,12 @@
         <span class="hljs-comment">// \\w <span class="zh-hans">任何子类字符</span>, <span class="zh-hans">包括下划线与</span>[a-zA-Z0-9_]<span class="zh-hans">等效</span></span>
         <span class="hljs-comment">// \\d <span class="zh-hans">数字</span></span>
 
-        <span class="hljs-keyword">boolean</span> b = Pattern.matches(rex,email);
+        <span class="hljs-keyword">boolean</span> b = Pattern.matches(rex,email); <span class="hljs-comment">// rex<span class="zh-hans">必须在</span>email<span class="zh-hans">前</span></span>
         System.out.println(b);
     }
 }
-</code></pre><h3 data-source-line="80" id="基本数据类型的包装类"><a class="markdownIt-Anchor" href="http://#基本数据类型的包装类"></a>基本数据类型的包装类</h3>
-<pre data-source-line="81"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">H</span> </span>{
+</code></pre><h3 data-source-line="89" id="基本数据类型的包装类"><a class="markdownIt-Anchor" href="http://#基本数据类型的包装类"></a>基本数据类型的包装类</h3>
+<pre data-source-line="90"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">H</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-keyword">int</span> a = <span class="hljs-number">5</span>;
         Integer n = <span class="hljs-number">5</span>; <span class="hljs-comment">// <span class="zh-hans">相当于</span>: Integer n = Integer.valueOf(5);</span>
@@ -94,19 +98,24 @@
         System.out.println(b1 == b2);   <span class="hljs-comment">// false 200<span class="zh-hans">不在</span>, <span class="zh-hans">需要</span>new</span>
     }
 }
-</code></pre><h4 data-source-line="107" id="继承"><a class="markdownIt-Anchor" href="http://#继承"></a>继承</h4>
-<p data-source-line="108">如果父类的属性是private, 那么子类不能直接调用该属性, 但是可以通过父类的gettet&amp;setter方法间接的使用该属性</p>
-<h5 data-source-line="110" id="final-关键字"><a class="markdownIt-Anchor" href="http://#final-关键字"></a><code>final</code> 关键字</h5>
-<p data-source-line="111">它可以修饰类/方法/属性
+</code></pre><h4 data-source-line="116" id="继承-extends"><a class="markdownIt-Anchor" href="http://#继承-extends"></a>继承 <code>extends</code></h4>
+<p data-source-line="117">如果父类的属性是private, 那么子类不能直接调用该属性, 但是可以通过父类的gettet&amp;setter方法间接的使用该属性</p>
+<h5 data-source-line="119" id="final-关键字"><a class="markdownIt-Anchor" href="http://#final-关键字"></a><code>final</code> 关键字</h5>
+<p data-source-line="120">它可以修饰类/方法/属性
 修饰类, 那么该类不能被继承
 修饰方法, 那么该方法不能被重写(覆写)
 修饰属性, 那么该属性的值不能被改变</p>
-<h4 data-source-line="116" id="重写"><a class="markdownIt-Anchor" href="http://#重写"></a>重写</h4>
-<p data-source-line="117">在子类中把可以继承过来的方法重新声明一遍, 访问权限不能比父类的更严格</p>
-<h5 data-source-line="118" id="super-关键字"><a class="markdownIt-Anchor" href="http://#super-关键字"></a><code>super</code> 关键字</h5>
-<p data-source-line="119">子类可以调用父类声明的构造方法，但是必须在子类的构造方法中使用super关键字来调用；如果想在子类中操作父类中被隐藏的成员变量和被重写的成员方法，也可以使用super关键字</p>
-<h6 data-source-line="121" id="把对象的属性写到数组里"><a class="markdownIt-Anchor" href="http://#把对象的属性写到数组里"></a>把对象的属性写到数组里</h6>
-<pre data-source-line="122"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+<h4 data-source-line="125" id="重写"><a class="markdownIt-Anchor" href="http://#重写"></a>重写</h4>
+<p data-source-line="126">在子类中把可以继承过来的方法重新声明一遍, 访问权限不能比父类的更严格</p>
+<p data-source-line="128">重写的方法的返回值不能比父类的更抽象</p>
+<pre data-source-line="129"><code class="hljs"><span class="hljs-function">A extends B extends C
+<span class="hljs-keyword">public</span> B <span class="hljs-title">method</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// <span class="zh-hans">当重写这个方法的时候</span>, <span class="zh-hans">返回值类型只能是</span>A<span class="zh-hans">或</span>B, <span class="zh-hans">不能是</span>C, B<span class="zh-hans">比</span>A<span class="zh-hans">抽象</span>, C<span class="zh-hans">比</span>B<span class="zh-hans">抽象</span></span>
+}
+</code></pre><h5 data-source-line="135" id="super-关键字"><a class="markdownIt-Anchor" href="http://#super-关键字"></a><code>super</code> 关键字</h5>
+<p data-source-line="136">子类可以调用父类声明的构造方法，但是必须在子类的构造方法中使用super关键字来调用, <code>super(参数)</code> <mark>必须写在第一行</mark>；如果想在子类中操作父类中被隐藏的成员变量和被重写的成员方法，也可以使用super关键字</p>
+<h6 data-source-line="138" id="把对象的属性写到数组里"><a class="markdownIt-Anchor" href="http://#把对象的属性写到数组里"></a>把对象的属性写到数组里</h6>
+<pre data-source-line="139"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         String str = <span class="hljs-string">"name=<span class="zh-hans">张三</span>,age=15,height=1.8 name=<span class="zh-hans">李四</span>,age=20,height=1.6 name=<span class="zh-hans">王五</span>,age=22,height=1.76"</span>;
         String[] str1 = str.split(<span class="hljs-string">"[ ]"</span>);   <span class="hljs-comment">// [name=<span class="zh-hans">张三</span>,age=15,height=1.8, name=<span class="zh-hans">李四</span>,age=20,height=1.6, name=<span class="zh-hans">王五</span>,age=22,height=1.76]</span>
@@ -134,8 +143,8 @@
         }
     }
 }
-</code></pre><h6 data-source-line="152" id="家庭类继承"><a class="markdownIt-Anchor" href="http://#家庭类继承"></a>家庭类(继承)</h6>
-<pre data-source-line="153"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+</code></pre><h6 data-source-line="169" id="家庭类继承"><a class="markdownIt-Anchor" href="http://#家庭类继承"></a>家庭类(继承)</h6>
+<pre data-source-line="170"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
         Family f = <span class="hljs-keyword">new</span> Family();
         f.introduction();
@@ -144,7 +153,7 @@
         f.travel();
     }
 }
-</code></pre><pre data-source-line="164"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Family</span> </span>{
+</code></pre><pre data-source-line="181"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Family</span> </span>{
     Man m = <span class="hljs-keyword">new</span> Man(<span class="hljs-string">"<span class="zh-hans">张翠山</span>"</span>, <span class="hljs-number">45</span>);
     Woman w = <span class="hljs-keyword">new</span> Woman(<span class="hljs-string">"<span class="zh-hans">殷素素</span>"</span>, <span class="hljs-number">35</span>);
     Children c = <span class="hljs-keyword">new</span> Children(<span class="hljs-string">"<span class="zh-hans">张无忌</span>"</span>, <span class="hljs-number">18</span>);
@@ -172,7 +181,7 @@
         System.out.println(m.getName() + <span class="hljs-string">"<span class="zh-hans">和</span>"</span> + w.getName() + <span class="hljs-string">"<span class="zh-hans">和</span>"</span> + c.getName() + <span class="hljs-string">"<span class="zh-hans">去旅行</span>"</span>);
     }
 }
-</code></pre><pre data-source-line="194"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Man</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Person</span> </span>{
+</code></pre><pre data-source-line="211"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Man</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Person</span> </span>{
     Woman wife;
     Children son;
 
@@ -197,7 +206,7 @@
         System.out.println(getName() + <span class="hljs-string">"<span class="zh-hans">为</span>"</span> + wife.getName() + <span class="hljs-string">"<span class="zh-hans">和</span>"</span> + son.getName() + <span class="hljs-string">"<span class="zh-hans">赚钱</span>"</span>);
     }
 }
-</code></pre><pre data-source-line="221"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Woman</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Person</span> </span>{
+</code></pre><pre data-source-line="238"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Woman</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Person</span> </span>{
     Man husband;
     Children son;
 
@@ -226,7 +235,7 @@
         System.out.println(<span class="hljs-string">"<span class="zh-hans">在下</span>"</span> + getName() + <span class="hljs-string">", <span class="zh-hans">不要问我多少岁</span>"</span>);
     }
 }
-</code></pre><pre data-source-line="252"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Children</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Person</span> </span>{
+</code></pre><pre data-source-line="269"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Children</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Person</span> </span>{
     Man farther;
     Woman mother;
 
@@ -251,7 +260,7 @@
         System.out.println(farther.getName() + <span class="hljs-string">"<span class="zh-hans">和</span>"</span> + mother.getName() + <span class="hljs-string">"<span class="zh-hans">给</span>"</span> + getName() + <span class="hljs-string">"<span class="zh-hans">辅导功课</span>"</span>);
     }
 }
-</code></pre><pre data-source-line="279"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+</code></pre><pre data-source-line="296"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
     <span class="hljs-keyword">private</span> String name;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;
     

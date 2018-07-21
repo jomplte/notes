@@ -3,44 +3,48 @@
 <li>没有返回值类型</li>
 <li>方法名与类名相同</li>
 <li>只给对象赋一次值</li>
+<li>作用: 用来创建对象, 对对象做一些初始化的操作</li>
 </ol>
-<p data-source-line="7">如果一个类中没有构造方法, 那么会有一个隐藏的默认的构造方法
+<p data-source-line="8">如果一个类中没有构造方法, 那么会有一个隐藏的默认的构造方法
 如果类中定义了带参数的构造方法, 那么默认的构造方法就会消失
 如果必须要用默认的, 就显示的书写出来
-构造方法是可以重载的</p>
-<h5 data-source-line="12" id="创建对象的公式"><a class="markdownIt-Anchor" href="http://#创建对象的公式"></a>创建对象的公式</h5>
-<p data-source-line="13">类名 变量名 = new 类名();</p>
-<pre data-source-line="14"><code class="hljs"><span class="zh-hans">类名</span> <span class="zh-hans">变量名</span> = <span class="hljs-keyword">new</span> <span class="hljs-type"></span><span class="zh-hans">构造方法</span>;
-</code></pre><h5 data-source-line="18" id="static-静态的"><a class="markdownIt-Anchor" href="http://#static-静态的"></a><code>static</code> 静态的</h5>
-<p data-source-line="20">修饰的方法可以直接通过类名调用
-修饰的变量被所有对象共享
-在static修饰的方法中只能调用其他的static方法</p>
-<p data-source-line="24">原因:当创建一个对象的时候, 实际上系统会先加载类, 然后才会创建对象, 类只会加载一次, 被static修饰的属性或方法属于类, 不属于对象, 所以被
+构造方法是可以重载的, 调用一个构造方法, 一定要先调用父类的构造方法, 不能被重写, 只能被调用</p>
+<h5 data-source-line="13" id="创建对象的公式"><a class="markdownIt-Anchor" href="http://#创建对象的公式"></a>创建对象的公式</h5>
+<p data-source-line="14">类名 变量名 = new 类名();</p>
+<pre data-source-line="15"><code class="hljs"><span class="zh-hans">类名</span> <span class="zh-hans">变量名</span> = <span class="hljs-keyword">new</span> <span class="hljs-type"></span><span class="zh-hans">构造方法</span>;
+</code></pre><h5 data-source-line="19" id="static-静态的"><a class="markdownIt-Anchor" href="http://#static-静态的"></a><code>static</code> 静态的</h5>
+<p data-source-line="21">可以修饰属性/方法/内部类</p>
+<p data-source-line="23">修饰的方法可以直接通过类名调用</p>
+<p data-source-line="25">修饰的属性被所有对象共享(一个对象改变了属性, 其他对象也用改变后的属性)</p>
+<p data-source-line="27">在static修饰的方法中只能调用其他的static方法</p>
+<p data-source-line="29">原因:当创建一个对象的时候, 实际上系统会先加载类, 然后才会创建对象, 类只会加载一次, 被static修饰的属性或方法属于类, 不属于对象, 所以被
 static修饰的方法可以直接通过类名调用</p>
-<h5 data-source-line="27" id="方法的格式"><a class="markdownIt-Anchor" href="http://#方法的格式"></a>方法的格式</h5>
-<pre data-source-line="28"><code class="hljs">0<span class="zh-hans">个或多个修饰符</span> <span class="zh-hans">返回值类型</span> <span class="zh-hans">方法名</span>(<span class="zh-hans">参数列表</span>){
+<p data-source-line="32">对象也可以调用静态的属性和方法, 但是一般不使用, 用类调</p>
+<h5 data-source-line="34" id="方法的格式"><a class="markdownIt-Anchor" href="http://#方法的格式"></a>方法的格式</h5>
+<pre data-source-line="35"><code class="hljs">0<span class="zh-hans">个或多个修饰符</span> <span class="zh-hans">返回值类型</span> <span class="zh-hans">方法名</span>(<span class="zh-hans">参数列表</span>){
     <span class="zh-hans">方法体</span>;
 }
-</code></pre><h5 data-source-line="33" id="方法的递归"><a class="markdownIt-Anchor" href="http://#方法的递归"></a>方法的递归</h5>
-<p data-source-line="34">在方法的内部, 还可以调用自己</p>
-<pre data-source-line="35"><code class="hljs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">diss</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>{
+</code></pre><h5 data-source-line="40" id="方法的递归"><a class="markdownIt-Anchor" href="http://#方法的递归"></a>方法的递归</h5>
+<p data-source-line="41">在方法的内部, 还可以调用自己</p>
+<pre data-source-line="42"><code class="hljs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">diss</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>{
     <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
     <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> n * diss(n - <span class="hljs-number">1</span>);    <span class="hljs-comment">// <span class="zh-hans">阶乘</span></span>
 }
-</code></pre><pre data-source-line="41"><code class="hljs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fi</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>{
+</code></pre><pre data-source-line="48"><code class="hljs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fi</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>{
     <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
     <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
     <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> fi(n - <span class="hljs-number">1</span>) + fi(n -<span class="hljs-number">2</span>);    <span class="hljs-comment">// <span class="zh-hans">斐波拉契</span></span>
 }
-</code></pre><h3 data-source-line="48" id="常用类"><a class="markdownIt-Anchor" href="http://#常用类"></a>常用类</h3>
-<ol data-source-line="49">
+</code></pre><h3 data-source-line="55" id="常用类"><a class="markdownIt-Anchor" href="http://#常用类"></a>常用类</h3>
+<ol data-source-line="56">
 <li>可变字符串</li>
 </ol>
-<pre data-source-line="50"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+<pre data-source-line="57"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-comment">// <span class="zh-hans">在多线程情况下优先使用</span>StringBuffer, <span class="zh-hans">因为它是安全的</span></span>
         <span class="hljs-comment">// <span class="zh-hans">单线程情况下优先使用</span>StringBuilder, <span class="zh-hans">因为它的效率比</span>StringBuffer<span class="zh-hans">要高</span></span>
         StringBuffer buffer = <span class="hljs-keyword">new</span> StringBuffer();
+        
         StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder();
         String[] strings = {<span class="hljs-string">"A"</span>, <span class="hljs-string">"B"</span>, <span class="hljs-string">"C"</span>, <span class="hljs-string">"D"</span>, <span class="hljs-string">"E"</span>, <span class="hljs-string">"F"</span>};
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; strings.length; i++) {
@@ -60,10 +64,11 @@ static修饰的方法可以直接通过类名调用</p>
         System.out.println(sb.insert(<span class="hljs-number">3</span>,<span class="hljs-number">2000</span>));
     }
 }
-</code></pre><ol data-source-line="76" start="2">
+</code></pre><ol data-source-line="84" start="2">
 <li>Math</li>
 </ol>
-<pre data-source-line="77"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+<h6 data-source-line="86" id="是一个工具类-里面都是静态方法"><a class="markdownIt-Anchor" href="http://#是一个工具类-里面都是静态方法"></a>是一个工具类, 里面都是静态方法</h6>
+<pre data-source-line="87"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-comment">// <span class="zh-hans">计算</span>x<span class="zh-hans">的绝对值</span></span>
         System.out.println(Math.abs(x));
@@ -79,10 +84,10 @@ static修饰的方法可以直接通过类名调用</p>
         System.out.println((<span class="hljs-keyword">int</span>)(Math.random() * <span class="hljs-number">100</span>) + <span class="hljs-number">1</span>);
     }
 }
-</code></pre><ol data-source-line="95" start="3">
+</code></pre><ol data-source-line="105" start="3">
 <li>时间日期</li>
 </ol>
-<pre data-source-line="96"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span> </span>{
+<pre data-source-line="106"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-comment">// <span class="zh-hans">从</span>1970-01-01 00:00:00<span class="zh-hans">到此刻的毫秒数</span></span>
         System.out.println(System.currentTimeMillis());
@@ -104,7 +109,7 @@ static修饰的方法可以直接通过类名调用</p>
         }
     }
 }
-</code></pre><pre data-source-line="120"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> </span>{
+</code></pre><pre data-source-line="130"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-keyword">long</span> date = System.currentTimeMillis();
         System.out.println(date);
@@ -117,5 +122,5 @@ static修饰的方法可以直接通过类名调用</p>
         System.out.println(format.format(date3));   <span class="hljs-comment">// <span class="zh-hans">最大</span>long<span class="zh-hans">型毫秒数</span>, <span class="zh-hans">的时间格式化</span></span>
     }
 }
-</code></pre><p data-source-line="135"><code>native</code> 关键字 用 C/C++ 写的</p>
+</code></pre><p data-source-line="145"><code>native</code> 关键字 用 C/C++ 写的</p>
 </div></article><body></body></html>

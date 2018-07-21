@@ -35,7 +35,7 @@
         <span class="hljs-keyword">return</span> sb.toString();
     }
 </code></pre><h3 data-source-line="49" id="多态"><a class="markdownIt-Anchor" href="http://#多态"></a>多态</h3>
-<p data-source-line="51">当调用某个对象的某个方法时, 系统会看这个对象的真实类型是什么, 调用的永远都是这个真实对象的方法</p>
+<p data-source-line="51">当调用某个对象的某个方法时, 系统会看这个对象的真实类型是什么, 调用的永远都是这个真实类型对象的方法</p>
 <h4 data-source-line="53" id="多态的表现形式"><a class="markdownIt-Anchor" href="http://#多态的表现形式"></a>多态的表现形式</h4>
 <ol data-source-line="55">
 <li>父类声明对象, 由子类初始化(创建对象)</li>
@@ -54,7 +54,7 @@
             <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
                 <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Penguin(<span class="hljs-string">"QQ"</span>,<span class="hljs-number">001</span>);   <span class="hljs-comment">// 3. <span class="zh-hans">如果一个方法的返回值类型是某个类型</span>, <span class="zh-hans">那么该类型的子类对象都可以作为返回值</span></span>
             <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
-                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Mouse(<span class="hljs-string">"<span class="zh-hans">米奇</span>"</span>,<span class="hljs-number">002</span>);
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Mouse(<span class="hljs-string">"<span class="zh-hans">米奇</span>"</span>,<span class="hljs-number">002</span>);   <span class="hljs-comment">// <span class="zh-hans">匿名对象</span>: new Mouse("<span class="zh-hans">米奇</span>",002);</span>
             <span class="hljs-keyword">default</span>:
                 System.out.println(<span class="hljs-string">"<span class="zh-hans">没捉到</span>"</span>);
                 <span class="hljs-keyword">break</span>;
