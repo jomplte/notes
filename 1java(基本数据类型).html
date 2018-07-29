@@ -4,12 +4,14 @@
 <p data-source-line="7"><code>JDK</code> java开发工具包（Java Developer's Kit）</p>
 <p data-source-line="9"><code>JRE</code> java运行时环境 (Java Runtime Environment)</p>
 <p data-source-line="11"><code>JVM</code> java虚拟机（Java Virtual Machine）</p>
-<p data-source-line="13"><code>.java</code> 源文件</p>
-<p data-source-line="15"><code>.class</code> 字节码文件</p>
-<h6 data-source-line="17" id="编译运行"><a class="markdownIt-Anchor" href="http://#编译运行"></a>编译&amp;运行</h6>
-<p data-source-line="19"><code>javac A.java</code> &amp; <code>java A</code></p>
-<h3 data-source-line="21" id="注释"><a class="markdownIt-Anchor" href="http://#注释"></a>注释</h3>
-<pre data-source-line="22"><code class="hljs"><span class="hljs-comment">//<span class="zh-hans">单行注释</span></span>
+<p data-source-line="13"><code>SDK</code> 软件开发工具包 (Software Developer's Kit)</p>
+<p data-source-line="15"><code>.java</code> 源文件</p>
+<p data-source-line="17"><code>.class</code> 字节码文件</p>
+<h6 data-source-line="19" id="编译运行"><a class="markdownIt-Anchor" href="http://#编译运行"></a>编译&amp;运行</h6>
+<p data-source-line="21"><code>javac A.java</code> &amp; <code>java A</code></p>
+<p data-source-line="23"><img src="https://ws3.sinaimg.cn/large/006tKfTcly1ftoj3ypvuaj31520opdm1.jpg" alt="image"></p>
+<h3 data-source-line="24" id="注释"><a class="markdownIt-Anchor" href="http://#注释"></a>注释</h3>
+<pre data-source-line="25"><code class="hljs"><span class="hljs-comment">//<span class="zh-hans">单行注释</span></span>
 
 <span class="hljs-comment">/*
 <span class="zh-hans">多</span>
@@ -17,8 +19,8 @@
 <span class="zh-hans">注</span>
 <span class="zh-hans">释</span>
 */</span>
-</code></pre><h3 data-source-line="32" id="第一个java程序"><a class="markdownIt-Anchor" href="http://#第一个java程序"></a>第一个Java程序</h3>
-<pre data-source-line="33"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>{
+</code></pre><h3 data-source-line="35" id="第一个java程序"><a class="markdownIt-Anchor" href="http://#第一个java程序"></a>第一个Java程序</h3>
+<pre data-source-line="36"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Test</span>{
     <span class="hljs-comment">// class <span class="zh-hans">类</span></span>
     <span class="hljs-comment">// <span class="zh-hans">创建的</span>java<span class="zh-hans">文件实际上是类文件</span></span>
     <span class="hljs-comment">// class<span class="zh-hans">后面紧跟着的是类的名字</span></span>
@@ -32,47 +34,68 @@
 		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"<span class="zh-hans">你好</span>"</span>);
 	}
 }
-</code></pre><h3 data-source-line="49" id="数据类型分为两大类"><a class="markdownIt-Anchor" href="http://#数据类型分为两大类"></a>数据类型分为两大类:</h3>
-<ol data-source-line="50">
+</code></pre><h3 data-source-line="52" id="数据类型分为两大类"><a class="markdownIt-Anchor" href="http://#数据类型分为两大类"></a>数据类型分为两大类:</h3>
+<ol data-source-line="53">
 <li>基本数据类型</li>
 </ol>
-<ul data-source-line="51">
+<ul data-source-line="54">
 <li>整型: byte short int long</li>
 <li>浮点型: double float</li>
 <li>布尔: boolean</li>
 <li>字符: char</li>
 </ul>
-<p data-source-line="56"><code>byte</code> 占1字节, 取值范围-128~127</p>
-<p data-source-line="58"><code>short</code> 2字节, 取值范围-32768~32767</p>
-<p data-source-line="60"><code>int</code> 4字节, 取值范围-2147483648~2147483647</p>
-<p data-source-line="62"><code>long</code> 8字节, 结尾必须加'L'或'l' , 'l'像'1', 建议写'L'</p>
-<p data-source-line="64"><code>double</code> 双精度浮点型,8字节</p>
-<p data-source-line="66"><code>float</code> 单精度浮点型，占4个字节，<mark>结尾必须加'F'或'f'</mark>，如果不加自动定义为double型变量</p>
-<p data-source-line="68"><code>char</code> 用来存储单个字符</p>
-<p data-source-line="70"><code>boolean</code> 小写true/false</p>
-<ol data-source-line="72" start="2">
+<p data-source-line="59"><code>byte</code> 占1字节, 取值范围-128~127</p>
+<p data-source-line="61"><code>short</code> 2字节, 取值范围-32768~32767</p>
+<p data-source-line="63"><code>int</code> 4字节, 取值范围-2147483648~2147483647</p>
+<p data-source-line="65"><code>long</code> 8字节, 结尾必须加'L'或'l' , 'l'像'1', 建议写'L'</p>
+<p data-source-line="67"><code>double</code> 双精度浮点型,8字节</p>
+<p data-source-line="69"><code>float</code> 单精度浮点型，占4个字节，<mark>结尾必须加'F'或'f'</mark>，如果不加自动定义为double型变量</p>
+<p data-source-line="71"><code>char</code> 用来存储单个字符</p>
+<p data-source-line="73"><code>boolean</code> 小写true/false</p>
+<ol data-source-line="75" start="2">
 <li>引用数据类型</li>
 </ol>
-<ul data-source-line="73">
+<ul data-source-line="76">
 <li>类</li>
 <li>数组</li>
 <li>接口</li>
 </ul>
-<h3 data-source-line="77" id="标识符"><a class="markdownIt-Anchor" href="http://#标识符"></a>标识符</h3>
-<ol data-source-line="78">
+<h3 data-source-line="80" id="标识符"><a class="markdownIt-Anchor" href="http://#标识符"></a>标识符</h3>
+<ol data-source-line="81">
 <li>由字母、数字、下划线和美元符号组成</li>
 <li>不能以数字开头, 并且区分大小写</li>
 <li>不能使用Java关键字和保留字</li>
 </ol>
-<h3 data-source-line="82" id="定义变量"><a class="markdownIt-Anchor" href="http://#定义变量"></a>定义变量</h3>
-<p data-source-line="83">数据类型 变量名 = 初始值;</p>
-<h3 data-source-line="85" id="数据类型的转换"><a class="markdownIt-Anchor" href="http://#数据类型的转换"></a>数据类型的转换</h3>
-<p data-source-line="86">范围小的数据类型可以自动转换为范围大的数据类型</p>
-<p data-source-line="88">如果需要把大范围的数赋值给小范围, 需要强制类型转换:</p>
-<p data-source-line="90">数据类型 变量名 = (需要转换的类型)值; <code>byte b1 = (byte) 300;</code></p>
-<p data-source-line="92">int 和 char 之间根据 <code>ASCII码表</code> 转换</p>
-<h3 data-source-line="94" id="注意"><a class="markdownIt-Anchor" href="http://#注意"></a>注意:</h3>
-<ol data-source-line="95">
+<h3 data-source-line="85" id="编码规范"><a class="markdownIt-Anchor" href="http://#编码规范"></a>编码规范:</h3>
+<ol data-source-line="86">
+<li>每次进入一对{}, 前面必须加上缩进</li>
+<li>写注释时, 标点符号后面跟上一个空格</li>
+<li>出现错误, 先修改正确, 再往下写</li>
+<li>就算if(for)(while)后面跟一条语句时{}可以省略,{}也不要省略!!!</li>
+</ol>
+<h3 data-source-line="91" id="标识符命名规范"><a class="markdownIt-Anchor" href="http://#标识符命名规范"></a>标识符命名规范</h3>
+<ol data-source-line="92">
+<li>骆驼式命名法（即帕斯卡命名法）:</li>
+</ol>
+<ul data-source-line="93">
+<li>类名 大驼峰 <code>HelloWorld</code></li>
+<li>变量名 小驼峰 <code>helloWorld</code></li>
+</ul>
+<ol data-source-line="96" start="2">
+<li>下划线法:</li>
+</ol>
+<ul data-source-line="97">
+<li><code>print_employee_paychecks()；</code></li>
+</ul>
+<h3 data-source-line="99" id="定义变量"><a class="markdownIt-Anchor" href="http://#定义变量"></a>定义变量</h3>
+<p data-source-line="100">数据类型 变量名 = 初始值;</p>
+<h3 data-source-line="102" id="数据类型的转换"><a class="markdownIt-Anchor" href="http://#数据类型的转换"></a>数据类型的转换</h3>
+<p data-source-line="103">范围小的数据类型可以自动转换为范围大的数据类型</p>
+<p data-source-line="105">如果需要把大范围的数赋值给小范围, 需要强制类型转换:</p>
+<p data-source-line="107">数据类型 变量名 = (需要转换的类型)值; <code>byte b1 = (byte) 300;</code></p>
+<p data-source-line="109">int 和 char 之间根据 <code>ASCII码表</code> 转换</p>
+<h3 data-source-line="111" id="注意"><a class="markdownIt-Anchor" href="http://#注意"></a>注意:</h3>
+<ol data-source-line="112">
 <li>如果变量没有被赋值, 不能使用</li>
 <li>判断两个字符串是否相等,不能使用 == 要用 .equals()</li>
 <li>在同一个作用域, 同一个变量不能声明两次</li>

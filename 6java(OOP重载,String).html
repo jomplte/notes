@@ -31,15 +31,13 @@
 </ul>
 <h3 data-source-line="35" id="字符串"><a class="markdownIt-Anchor" href="http://#字符串"></a>字符串</h3>
 <p data-source-line="36"><strong>原来的字符串都没有变化, 全是另外生成新的字符串</strong></p>
-<pre data-source-line="37"><code class="hljs"><span class="hljs-keyword">import</span> java.util.Arrays;
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+<pre data-source-line="37"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         String str = <span class="hljs-string">"   <span class="zh-hans">让</span>1<span class="zh-hans">教</span>2<span class="zh-hans">育</span>3<span class="zh-hans">回</span>4<span class="zh-hans">归</span>5<span class="zh-hans">本</span>6<span class="zh-hans">质</span>...<span class="zh-hans">回归本质</span>abcABC  "</span>;
         <span class="hljs-comment">// <span class="zh-hans">字符串是通过封装</span>char<span class="zh-hans">而得到的</span></span>
 
         <span class="hljs-comment">// <span class="zh-hans">获取字符串的长度</span></span>
-        <span class="hljs-keyword">int</span> length = str.length();
-        System.out.println(length);
+        System.out.println(str.length());
         <span class="hljs-comment">// <span class="zh-hans">获取字符串中第</span>index<span class="zh-hans">位置的字符</span></span>
         System.out.println(str.charAt(<span class="hljs-number">8</span>));
         <span class="hljs-comment">// <span class="zh-hans">获取某个字符在字符串中第一次出现的下标</span></span>
@@ -60,7 +58,7 @@
         <span class="hljs-comment">// <span class="zh-hans">将字符串中的某个字符都替换为新的字符</span></span>
         <span class="hljs-comment">// <span class="zh-hans">原来的字符串对象没有变化</span>, <span class="zh-hans">该方法会返回一个新的字符串对象</span></span>
         String s = str.replace(<span class="hljs-string">'<span class="zh-hans">本</span>'</span>, <span class="hljs-string">'A'</span>);
-        <span class="hljs-comment">// <span class="zh-hans">将</span>regex<span class="zh-hans">正则表达式的子串都替换为某个字符串</span></span>
+        <span class="hljs-comment">// <span class="zh-hans">将</span>regex<span class="zh-hans">正则表达式的子串都替换为某个字符串</span>, \\d<span class="zh-hans">代表数字</span></span>
         System.out.println(str.replaceAll(<span class="hljs-string">"\\d"</span>,<span class="hljs-string">"ABC"</span>));
         <span class="hljs-comment">// <span class="zh-hans">判断字符串是否为空</span></span>
         String s1;          <span class="hljs-comment">// <span class="zh-hans">未初始化</span>, <span class="zh-hans">不能使用</span></span>

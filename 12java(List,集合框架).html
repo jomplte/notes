@@ -18,13 +18,12 @@
 <p data-source-line="24"><code>List</code> 是一个有序的Collection,使用此接口能够精确的控制每个元素插入的位置, 能够通过索引(元素在List中位置,类似于数组的下标)来访问List中的元素, 而且允许有相同的元素</p>
 <p data-source-line="26"><code>Set</code> Set具有与Collection完全一样的接口, 只是行为上不同, Set 不保存重复的元素</p>
 <p data-source-line="28"><code>Map</code> 将唯一的键映射到值</p>
-<p data-source-line="30"><code>Enumeration</code> 这是一个传统的接口和定义的方法, 通过它可以枚举(一次获得一个)对象集合中的元素, 这
-个传统接口已被迭代器<code>iterator()</code>取代</p>
-<p data-source-line="33"><code>ArrayList</code> 内部使用数组实现的, 查找效率非常高, 因为内存是连续的.
+<p data-source-line="30"><code>Enumeration</code> 这是一个传统的接口和定义的方法, 通过它可以枚举(一次获得一个)对象集合中的元素, 这个传统接口已被迭代器<code>iterator()</code>取代</p>
+<p data-source-line="32"><code>ArrayList</code> 内部使用数组实现的, 查找效率非常高, 因为内存是连续的.
 当删除或插入某个元素的时候, 其他大部分元素都会发生移动, 所以效率比较低</p>
-<p data-source-line="36"><code>LinkedList</code> 内部使用链表实现, 查找某个元素的时候只能从开始位置遍历, 所以效率较低, 但是插入和删除某个元素的时候其他元素不用移动位置, 效率较高</p>
-<h4 data-source-line="37" id="arraylist"><a class="markdownIt-Anchor" href="http://#arraylist"></a>ArrayList</h4>
-<pre data-source-line="38"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+<p data-source-line="35"><code>LinkedList</code> 内部使用链表实现, 查找某个元素的时候只能从开始位置遍历, 所以效率较低, 但是插入和删除某个元素的时候其他元素不用移动位置, 效率较高</p>
+<h4 data-source-line="36" id="arraylist"><a class="markdownIt-Anchor" href="http://#arraylist"></a>ArrayList</h4>
+<pre data-source-line="37"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         Goods g1 = <span class="hljs-keyword">new</span> Goods(<span class="hljs-string">"<span class="zh-hans">商品</span>1"</span>, <span class="hljs-number">10</span>);
         Goods g2 = <span class="hljs-keyword">new</span> Goods(<span class="hljs-string">"<span class="zh-hans">商品</span>2"</span>, <span class="hljs-number">20</span>);
@@ -56,9 +55,9 @@
 
     }
 }
-</code></pre><h4 data-source-line="72" id="集合排序"><a class="markdownIt-Anchor" href="http://#集合排序"></a>集合排序</h4>
-<p data-source-line="73">对集合排序, 前提: 集合中的元素一定是可以比较大小的, 实现了Comparable接口的类可以自定义比较规则, 额外指定比较规则(Comparator比较器)</p>
-<pre data-source-line="74"><code class="hljs">        list.add(<span class="hljs-keyword">new</span> Goods(<span class="hljs-string">"<span class="zh-hans">商品</span>1"</span>, <span class="hljs-number">42</span>));
+</code></pre><h4 data-source-line="71" id="集合排序"><a class="markdownIt-Anchor" href="http://#集合排序"></a>集合排序</h4>
+<p data-source-line="72">对集合排序, 前提: 集合中的元素一定是可以比较大小的, 实现了Comparable接口的类可以自定义比较规则, 额外指定比较规则(Comparator比较器)</p>
+<pre data-source-line="73"><code class="hljs">        list.add(<span class="hljs-keyword">new</span> Goods(<span class="hljs-string">"<span class="zh-hans">商品</span>1"</span>, <span class="hljs-number">42</span>));
         list.add(<span class="hljs-keyword">new</span> Goods(<span class="hljs-string">"<span class="zh-hans">商品</span>2"</span>, <span class="hljs-number">63</span>));
         list.add(<span class="hljs-keyword">new</span> Goods(<span class="hljs-string">"<span class="zh-hans">商品</span>3"</span>, <span class="hljs-number">55</span>));
         list.add(<span class="hljs-keyword">new</span> Goods(<span class="hljs-string">"<span class="zh-hans">商品</span>4"</span>, <span class="hljs-number">52</span>));
@@ -86,7 +85,7 @@
             Goods g = list.get(i);
             System.out.println(g.getName() + <span class="hljs-string">" "</span>);
         }
-</code></pre><pre data-source-line="104"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Goods</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Comparable</span>&lt;<span class="hljs-title">Goods</span>&gt; </span>{
+</code></pre><pre data-source-line="103"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Goods</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Comparable</span>&lt;<span class="hljs-title">Goods</span>&gt; </span>{
     <span class="hljs-keyword">private</span> String name;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">float</span> price;
     
@@ -111,8 +110,8 @@
         <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
     }
 }
-</code></pre><h4 data-source-line="131" id="集合的遍历"><a class="markdownIt-Anchor" href="http://#集合的遍历"></a>集合的遍历</h4>
-<pre data-source-line="132"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+</code></pre><h4 data-source-line="130" id="集合的遍历"><a class="markdownIt-Anchor" href="http://#集合的遍历"></a>集合的遍历</h4>
+<pre data-source-line="131"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         Goods g1 = <span class="hljs-keyword">new</span> Goods(<span class="hljs-string">"<span class="zh-hans">商品</span>1"</span>, <span class="hljs-number">10</span>);
         Goods g2 = <span class="hljs-keyword">new</span> Goods(<span class="hljs-string">"<span class="zh-hans">商品</span>2"</span>, <span class="hljs-number">20</span>);
@@ -145,7 +144,7 @@
             <span class="hljs-meta">@Override</span>
             <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">accept</span><span class="hljs-params">(Goods goods)</span> </span>{
                 System.out.println(f);
-                <span class="hljs-comment">// // <span class="zh-hans">匿名内部类只能用</span>final<span class="zh-hans">修饰的成员变量</span></span>
+                <span class="hljs-comment">// <span class="zh-hans">匿名内部类只能用</span>final<span class="zh-hans">修饰的成员变量</span></span>
             }
         });
 
@@ -154,8 +153,8 @@
         });
     }
 }
-</code></pre><h4 data-source-line="176" id="函数式编程"><a class="markdownIt-Anchor" href="http://#函数式编程"></a>函数式编程</h4>
-<pre data-source-line="177"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+</code></pre><h4 data-source-line="175" id="函数式编程"><a class="markdownIt-Anchor" href="http://#函数式编程"></a>函数式编程</h4>
+<pre data-source-line="176"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         Goods g1 = <span class="hljs-keyword">new</span> Goods(<span class="hljs-number">1</span>,<span class="hljs-string">"<span class="zh-hans">商品</span>1"</span>, <span class="hljs-number">10</span>);
         Goods g2 = <span class="hljs-keyword">new</span> Goods(<span class="hljs-number">5</span>,<span class="hljs-string">"<span class="zh-hans">商品</span>2"</span>, <span class="hljs-number">20</span>);
@@ -183,10 +182,10 @@
         System.out.println(names); <span class="hljs-comment">// [<span class="zh-hans">商品</span>7, <span class="zh-hans">商品</span>6, <span class="zh-hans">商品</span>5, <span class="zh-hans">商品</span>2, <span class="zh-hans">商品</span>3]</span>
     }
 }
-</code></pre><h4 data-source-line="207" id="迭代器原理lite"><a class="markdownIt-Anchor" href="http://#迭代器原理lite"></a>迭代器原理lite</h4>
-<p data-source-line="208">Iterable接口实现类的一个对象调用一个Iterable接口的方法,
+</code></pre><h4 data-source-line="206" id="迭代器原理lite"><a class="markdownIt-Anchor" href="http://#迭代器原理lite"></a>迭代器原理lite</h4>
+<p data-source-line="207">Iterable接口实现类的一个对象调用一个Iterable接口的方法,
 返回一个匿名对象, 匿名对象的类实现了Iterator接口, 匿名对象的类的一个对象就可以调用Iterator接口的方法, 匿名对象的类是Iterable接口实现类的一个内部类</p>
-<pre data-source-line="210"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IteratorMain</span> </span>{
+<pre data-source-line="209"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IteratorMain</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-comment">// <span class="zh-hans">迭代器模式</span></span>
         <span class="hljs-comment">//<span class="zh-hans">以一个统一的方式去遍历不同类型的容器</span></span>
@@ -203,10 +202,10 @@
         }
     }
 }
-</code></pre><pre data-source-line="229"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyIterable</span> </span>{
+</code></pre><pre data-source-line="228"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyIterable</span> </span>{
     <span class="hljs-function">MyIterator <span class="hljs-title">iterator</span><span class="hljs-params">()</span></span>;
 }
-</code></pre><pre data-source-line="234"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyIterator</span> </span>{
+</code></pre><pre data-source-line="233"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyIterator</span> </span>{
 
     <span class="hljs-comment">/**
      * <span class="zh-hans">用来判断是否有下一个元素</span>
@@ -220,7 +219,7 @@
      */</span>
     <span class="hljs-function">Goods <span class="hljs-title">next</span><span class="hljs-params">()</span></span>;
 }
-</code></pre><pre data-source-line="250"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cart1</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MyIterable</span></span>{
+</code></pre><pre data-source-line="249"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cart1</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MyIterable</span></span>{
     <span class="hljs-keyword">private</span> Goods[] goodsArray = <span class="hljs-keyword">new</span> Goods[<span class="hljs-number">10</span>];
 
     <span class="hljs-keyword">public</span> Goods[] getGoodsArray() {
@@ -246,7 +245,7 @@
         }
     }
 }
-</code></pre><pre data-source-line="278"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cart2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MyIterable</span></span>{
+</code></pre><pre data-source-line="277"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cart2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MyIterable</span></span>{
     <span class="hljs-keyword">private</span> List&lt;Goods&gt; goodsList = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
 
     <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Goods&gt; <span class="hljs-title">getGoodsList</span><span class="hljs-params">()</span> </span>{
@@ -273,8 +272,8 @@
         }
     }
 }
-</code></pre><h4 data-source-line="307" id="collections工具类中sort方法的实现原理lite"><a class="markdownIt-Anchor" href="http://#collections工具类中sort方法的实现原理lite"></a>Collections工具类中sort()方法的实现原理lite</h4>
-<pre data-source-line="308"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+</code></pre><h4 data-source-line="306" id="collections工具类中sort方法的实现原理lite"><a class="markdownIt-Anchor" href="http://#collections工具类中sort方法的实现原理lite"></a>Collections工具类中sort()方法的实现原理lite</h4>
+<pre data-source-line="307"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         Person[] persons = <span class="hljs-keyword">new</span> Person[<span class="hljs-number">5</span>];
         persons[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"<span class="zh-hans">张三</span>"</span>, <span class="hljs-number">18</span>, <span class="hljs-number">70</span>, <span class="hljs-number">160</span>);
@@ -300,13 +299,13 @@
         System.out.println(Arrays.toString(persons));
     }
 }
-</code></pre><pre data-source-line="336"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyComparable</span> &lt;<span class="hljs-title">T</span>&gt; </span>{
+</code></pre><pre data-source-line="335"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyComparable</span> &lt;<span class="hljs-title">T</span>&gt; </span>{
     <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">compartTo</span><span class="hljs-params">(T other)</span></span>;
 }
-</code></pre><pre data-source-line="341"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyComparator</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+</code></pre><pre data-source-line="340"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyComparator</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
     <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(T o1, T o2)</span></span>;
 }
-</code></pre><pre data-source-line="346"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCollections</span> </span>{
+</code></pre><pre data-source-line="345"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCollections</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(MyComparable[] array)</span> </span>{
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; array.length - <span class="hljs-number">1</span>; i++) {
             <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; array.length - <span class="hljs-number">1</span> - i; j++) {
@@ -331,7 +330,7 @@
         }
     }
 }
-</code></pre><pre data-source-line="373"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MyComparable</span>&lt;<span class="hljs-title">Person</span>&gt;</span>{
+</code></pre><pre data-source-line="372"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MyComparable</span>&lt;<span class="hljs-title">Person</span>&gt;</span>{
     <span class="hljs-keyword">private</span> String name;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">float</span> weight;
@@ -368,8 +367,8 @@
         <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
     }
 }
-</code></pre><h4 data-source-line="412" id="注意"><a class="markdownIt-Anchor" href="http://#注意"></a>注意</h4>
-<ul data-source-line="413">
+</code></pre><h4 data-source-line="411" id="注意"><a class="markdownIt-Anchor" href="http://#注意"></a>注意</h4>
+<ul data-source-line="412">
 <li>匿名内部类的排序方法比类里面的排序方法优先级高</li>
 <li>集合中的元素是重复的, 那么调用 <code>remove</code>, <code>indexOf</code> 等方法从下标小的元素开始操作</li>
 <li>在增强for循环中不能更改集合的长度</li>

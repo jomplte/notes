@@ -35,14 +35,15 @@
         <span class="hljs-keyword">return</span> sb.toString();
     }
 </code></pre><h3 data-source-line="49" id="多态"><a class="markdownIt-Anchor" href="http://#多态"></a>多态</h3>
-<p data-source-line="51">当调用某个对象的某个方法时, 系统会看这个对象的真实类型是什么, 调用的永远都是这个真实类型对象的方法</p>
-<h4 data-source-line="53" id="多态的表现形式"><a class="markdownIt-Anchor" href="http://#多态的表现形式"></a>多态的表现形式</h4>
-<ol data-source-line="55">
+<p data-source-line="51">多态指允许不同类的对象对同一消息做出响应, 即同一消息可以根据发送对象的不同而采用多种不同的行为方式。</p>
+<p data-source-line="53">当调用某个对象的某个方法时, 系统会看这个对象的真实类型是什么, 调用的永远都是这个真实类型对象的方法</p>
+<h4 data-source-line="55" id="多态的表现形式"><a class="markdownIt-Anchor" href="http://#多态的表现形式"></a>多态的表现形式</h4>
+<ol data-source-line="57">
 <li>父类声明对象, 由子类初始化(创建对象)</li>
 <li>如果一个方法的参数中需要传递某个类型的参数, 那么该类型的子类对象都可以传递</li>
 <li>如果一个方法的返回值类型是某个类型, 那么该类型的子类对象都可以作为返回值</li>
 </ol>
-<pre data-source-line="58"><code class="hljs">    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Feeder</span> </span>{
+<pre data-source-line="60"><code class="hljs">    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Feeder</span> </span>{
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TYPE_P = <span class="hljs-number">1</span>;
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TYPE_M = <span class="hljs-number">2</span>;
 
@@ -62,7 +63,7 @@
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
 }
-</code></pre><pre data-source-line="80"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+</code></pre><pre data-source-line="82"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
         Animal animal1 = <span class="hljs-keyword">new</span> Penguin(<span class="hljs-string">"<span class="zh-hans">企鹅</span>"</span>, <span class="hljs-number">1003</span>); <span class="hljs-comment">// 1. <span class="zh-hans">父类声明对象</span>, <span class="zh-hans">由子类初始化</span>(<span class="zh-hans">创建对象</span>)</span>
@@ -83,7 +84,7 @@
         }
     }
 }
-</code></pre><pre data-source-line="103"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Player</span> </span>{
+</code></pre><pre data-source-line="105"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Player</span> </span>{
 
     <span class="hljs-keyword">private</span> Hero hero;
 

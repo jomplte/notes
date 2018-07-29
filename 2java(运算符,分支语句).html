@@ -64,20 +64,22 @@
 <p data-source-line="87">与: <code>&amp;&amp;</code> 两个条件都是true, 结果才是true</p>
 <p data-source-line="89">或: <code>||</code> 两个条件中只要有一个true, 结果就是true</p>
 <p data-source-line="91">非: <code>!</code></p>
-<pre data-source-line="92"><code class="hljs"><span class="hljs-keyword">public</span> class Logic {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> main(<span class="hljs-keyword">String</span>[] args){
-        <span class="hljs-keyword">int</span> a = <span class="hljs-number">3</span>;
-        <span class="hljs-keyword">boolean</span> result = a &gt;= <span class="hljs-number">1</span> &amp;&amp; a &lt;= <span class="hljs-number">10</span>; <span class="hljs-comment">// <span class="zh-hans">判断一个数是否在</span>1~10<span class="zh-hans">之间</span></span>
-        System.out.<span class="hljs-built_in">println</span>(result);
+<pre data-source-line="92"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomeWork2_5</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        Scanner scan = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.println(<span class="hljs-string">"<span class="zh-hans">请输入一个年份</span>,<span class="zh-hans">判断是否是闰年</span>"</span>);
+        <span class="hljs-keyword">int</span> year = scan.nextInt();
 
-        <span class="hljs-keyword">boolean</span> b = a % <span class="hljs-number">3</span> == <span class="hljs-number">0</span> &amp;&amp; a % <span class="hljs-number">5</span> == <span class="hljs-number">0</span>;   <span class="hljs-comment">// <span class="zh-hans">判断一个数能否同时被</span>3<span class="zh-hans">和</span>5<span class="zh-hans">整除</span></span>
-        System.out.<span class="hljs-built_in">println</span>(b);
-        System.out.<span class="hljs-built_in">println</span>(!b);
+        <span class="hljs-keyword">if</span>((year % <span class="hljs-number">400</span> == <span class="hljs-number">0</span>) ||( (year % <span class="hljs-number">4</span> == <span class="hljs-number">0</span>) &amp;&amp; (year % <span class="hljs-number">100</span> != <span class="hljs-number">0</span>)) ){
+            System.out.println(year + <span class="hljs-string">"<span class="zh-hans">年是闰年</span>"</span>);
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(year + <span class="hljs-string">"<span class="zh-hans">年不是闰年</span>"</span>);
+        }
     }
 }
-</code></pre><h3 data-source-line="106" id="位运算符"><a class="markdownIt-Anchor" href="http://#位运算符"></a>位运算符</h3>
-<p data-source-line="107"><code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>^</code> <code>&amp;</code> <code>|</code></p>
-<pre data-source-line="109"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">D</span> {
+</code></pre><h3 data-source-line="107" id="位运算符"><a class="markdownIt-Anchor" href="http://#位运算符"></a>位运算符</h3>
+<p data-source-line="108"><code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>^</code> <code>&amp;</code> <code>|</code></p>
+<pre data-source-line="110"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">D</span> {
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] args</span>) </span>{
         <span class="hljs-keyword">int</span> x = <span class="hljs-number">14</span>,y = <span class="hljs-number">18</span>, z;
         z = x &amp; y;
@@ -96,18 +98,18 @@
          */</span>
     }
 }
-</code></pre><h5 data-source-line="130" id="左乘右除"><a class="markdownIt-Anchor" href="http://#左乘右除"></a>左乘右除</h5>
-<p data-source-line="132"><code>y&lt;&lt;2</code> 与<code>y*4</code>的结果相同，4就是2的二次方</p>
-<p data-source-line="134"><code>y&gt;&gt;1</code> 与<code>y/2</code>的结果相同，2为2的一次方</p>
-<h5 data-source-line="136" id="高效判断一个数是不是偶数"><a class="markdownIt-Anchor" href="http://#高效判断一个数是不是偶数"></a>高效判断一个数是不是偶数</h5>
-<pre data-source-line="137"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">E</span> {
+</code></pre><h5 data-source-line="131" id="左乘右除"><a class="markdownIt-Anchor" href="http://#左乘右除"></a>左乘右除</h5>
+<p data-source-line="133"><code>y&lt;&lt;2</code> 与<code>y*4</code>的结果相同，4就是2的二次方</p>
+<p data-source-line="135"><code>y&gt;&gt;1</code> 与<code>y/2</code>的结果相同，2为2的一次方</p>
+<h5 data-source-line="137" id="高效判断一个数是不是偶数"><a class="markdownIt-Anchor" href="http://#高效判断一个数是不是偶数"></a>高效判断一个数是不是偶数</h5>
+<pre data-source-line="138"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">E</span> {
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] args</span>) </span>{
         <span class="hljs-keyword">int</span> a = <span class="hljs-number">6</span>;
         System.<span class="hljs-keyword">out</span>.println(a == a &gt;&gt; <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">1</span>);   <span class="hljs-comment">//<span class="zh-hans">高效判断一个数是偶数还是奇数</span></span>
     }
 }
-</code></pre><h4 data-source-line="145" id="和-的区别"><a class="markdownIt-Anchor" href="http://#和-的区别"></a><code>&amp;&amp;</code> 和 <code>&amp;</code> 的区别</h4>
-<ol data-source-line="147">
+</code></pre><h4 data-source-line="146" id="和-的区别"><a class="markdownIt-Anchor" href="http://#和-的区别"></a><code>&amp;&amp;</code> 和 <code>&amp;</code> 的区别</h4>
+<ol data-source-line="148">
 <li>
 <p><code>&amp;&amp;</code> 是逻辑运算符    <code>&amp;</code> 是位运算符</p>
 </li>
@@ -115,18 +117,18 @@
 <p>以“&amp;&amp;”和“&amp;”为例，这两个符号都是逻辑与，当左右两个表达式都为true时，逻辑结果才为true。使用“&amp;”时，左右两边都会判断；而使用“&amp;&amp;”时，如果“&amp;&amp;”左边的表达式结果为false，那么计算机就不会再判断右边的结果了，直接返回逻辑结果为false，这就是它们的区别。“||”则是左边判断为true时，就不会再判断右边，而“|”两边都会判断。使用“&amp;&amp;”和“||”可以节省计算机判断的次数，提高效率，通常被称为“短路”，而“&amp;”和“|”被称为“非短路”。</p>
 </li>
 </ol>
-<h3 data-source-line="151" id="分支语句"><a class="markdownIt-Anchor" href="http://#分支语句"></a>分支语句</h3>
-<h4 data-source-line="153" id="if分支"><a class="markdownIt-Anchor" href="http://#if分支"></a>if分支</h4>
-<pre data-source-line="154"><code class="hljs"><span class="hljs-keyword">if</span> (<span class="zh-hans">条件</span>){
+<h3 data-source-line="152" id="分支语句"><a class="markdownIt-Anchor" href="http://#分支语句"></a>分支语句</h3>
+<h4 data-source-line="154" id="if分支"><a class="markdownIt-Anchor" href="http://#if分支"></a>if分支</h4>
+<pre data-source-line="155"><code class="hljs"><span class="hljs-keyword">if</span> (<span class="zh-hans">条件</span>){
     <span class="zh-hans">代码块</span>;     <span class="hljs-comment">// <span class="zh-hans">条件返回值为</span>true<span class="zh-hans">的情况下所执行的代码</span></span>
 }
-</code></pre><pre data-source-line="159"><code class="hljs"><span class="hljs-keyword">if</span> (<span class="zh-hans">条件</span>){
+</code></pre><pre data-source-line="160"><code class="hljs"><span class="hljs-keyword">if</span> (<span class="zh-hans">条件</span>){
     <span class="zh-hans">代码块</span><span class="hljs-number">1</span>;    <span class="hljs-comment">// <span class="zh-hans">条件满足执行代码块</span>1        </span>
 } <span class="hljs-keyword">else</span> {
     <span class="zh-hans">代码块</span><span class="hljs-number">2</span>;    <span class="hljs-comment">// <span class="zh-hans">条件不满足执行代码块</span>2</span>
 }
-</code></pre><h5 data-source-line="166" id="规范就算ifforwhile后面跟一条语句可以省略也不要省略"><a class="markdownIt-Anchor" href="http://#规范就算ifforwhile后面跟一条语句可以省略也不要省略"></a>规范:就算if(for)(while)后面跟一条语句{}可以省略,{}也不要省略!!!</h5>
-<pre data-source-line="168"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+</code></pre><h5 data-source-line="167" id="规范就算ifforwhile后面跟一条语句可以省略也不要省略"><a class="markdownIt-Anchor" href="http://#规范就算ifforwhile后面跟一条语句可以省略也不要省略"></a>规范:就算if(for)(while)后面跟一条语句{}可以省略,{}也不要省略!!!</h5>
+<pre data-source-line="169"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         System.out.println(<span class="hljs-string">"Hello World!"</span>);
         <span class="hljs-keyword">int</span> a = <span class="hljs-number">56</span>;
@@ -136,7 +138,7 @@
             System.out.println(<span class="hljs-string">"<span class="zh-hans">需要重修</span>"</span>);
     }
 }
-</code></pre><pre data-source-line="180"><code class="hljs"><span class="hljs-keyword">if</span> (<span class="zh-hans">条件</span><span class="hljs-number">1</span>){
+</code></pre><pre data-source-line="181"><code class="hljs"><span class="hljs-keyword">if</span> (<span class="zh-hans">条件</span><span class="hljs-number">1</span>){
     <span class="zh-hans">代码块</span><span class="hljs-number">1</span>;
 } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="zh-hans">条件</span><span class="hljs-number">2</span>){
     <span class="zh-hans">代码块</span><span class="hljs-number">2</span>;
@@ -145,8 +147,8 @@
 } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="zh-hans">条件</span>n){
     <span class="zh-hans">代码块</span>n;
 }
-</code></pre><h5 data-source-line="191" id="if嵌套"><a class="markdownIt-Anchor" href="http://#if嵌套"></a>if嵌套</h5>
-<pre data-source-line="192"><code class="hljs"><span class="hljs-keyword">if</span> (<span class="zh-hans">条件</span>a){
+</code></pre><h5 data-source-line="192" id="if嵌套"><a class="markdownIt-Anchor" href="http://#if嵌套"></a>if嵌套</h5>
+<pre data-source-line="193"><code class="hljs"><span class="hljs-keyword">if</span> (<span class="zh-hans">条件</span>a){
             <span class="hljs-keyword">if</span>(<span class="zh-hans">条件</span><span class="hljs-number">1</span>){
                 <span class="zh-hans">代码块</span>;
             }
@@ -157,8 +159,8 @@
         } <span class="hljs-keyword">else</span> {
             <span class="zh-hans">代码块</span>;
         }
-</code></pre><h4 data-source-line="205" id="switch分支语句"><a class="markdownIt-Anchor" href="http://#switch分支语句"></a>switch分支语句</h4>
-<pre data-source-line="206"><code class="hljs"><span class="hljs-keyword">switch</span> (<span class="zh-hans">表达式</span>){ <span class="hljs-comment">// <span class="zh-hans">表达式的结果必须可以自动转换为</span>int<span class="zh-hans">型</span></span>
+</code></pre><h4 data-source-line="206" id="switch分支语句"><a class="markdownIt-Anchor" href="http://#switch分支语句"></a>switch分支语句</h4>
+<pre data-source-line="207"><code class="hljs"><span class="hljs-keyword">switch</span> (<span class="zh-hans">表达式</span>){ <span class="hljs-comment">// <span class="zh-hans">表达式的结果必须可以自动转换为</span>int<span class="zh-hans">型</span></span>
     <span class="hljs-keyword">case</span> <span class="zh-hans">值</span><span class="hljs-number">1</span>:
         <span class="zh-hans">代码块</span><span class="hljs-number">1</span>;
         <span class="hljs-keyword">break</span>; <span class="hljs-comment">// <span class="zh-hans">如果没有</span>break, <span class="zh-hans">那么将顺序执行下一个</span>case,<span class="zh-hans">直到遇到</span>break<span class="zh-hans">或</span>switch<span class="zh-hans">结构结束为止</span></span>

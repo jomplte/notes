@@ -179,23 +179,8 @@
         }
     }
 }
-</code></pre><pre data-source-line="192"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
-        String srcPath = <span class="hljs-string">"/Users/dllo/Documents/<span class="zh-hans">杨金武</span>.key"</span>;
-        String desPath = <span class="hljs-string">"/Users/dllo/Desktop/<span class="zh-hans">杨</span>.key"</span>;
-        <span class="hljs-keyword">try</span> (FileInputStream is = <span class="hljs-keyword">new</span> FileInputStream(srcPath);FileOutputStream os = <span class="hljs-keyword">new</span> FileOutputStream(desPath)) {
-            <span class="hljs-keyword">byte</span>[] buf = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>];
-            <span class="hljs-keyword">int</span> length = -<span class="hljs-number">1</span>;
-            <span class="hljs-keyword">while</span> ((length = is.read(buf)) != -<span class="hljs-number">1</span>) {
-                os.write(buf, <span class="hljs-number">0</span>, length);
-            }
-        } <span class="hljs-keyword">catch</span> (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
-</code></pre><h6 data-source-line="209" id="使用字节流实现文件的复制"><a class="markdownIt-Anchor" href="http://#使用字节流实现文件的复制"></a>使用字节流实现文件的复制</h6>
-<pre data-source-line="210"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CopyDemo</span> </span>{
+</code></pre><h6 data-source-line="192" id="使用字节流实现文件的复制"><a class="markdownIt-Anchor" href="http://#使用字节流实现文件的复制"></a>使用字节流实现文件的复制</h6>
+<pre data-source-line="193"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CopyDemo</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-comment">// <span class="zh-hans">使用字节流实现文件的复制</span></span>
         <span class="hljs-comment">//<span class="zh-hans">原文件路径</span></span>
@@ -232,16 +217,32 @@
         }
     }
 }
-</code></pre><h4 data-source-line="249" id="带缓冲的流"><a class="markdownIt-Anchor" href="http://#带缓冲的流"></a>带缓冲的流</h4>
-<ul data-source-line="250">
+</code></pre><h6 data-source-line="232" id="简写"><a class="markdownIt-Anchor" href="http://#简写"></a>简写</h6>
+<pre data-source-line="233"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        String srcPath = <span class="hljs-string">"/Users/dllo/Documents/<span class="zh-hans">杨金武</span>.key"</span>;
+        String desPath = <span class="hljs-string">"/Users/dllo/Desktop/<span class="zh-hans">杨</span>.key"</span>;
+        <span class="hljs-keyword">try</span> (FileInputStream is = <span class="hljs-keyword">new</span> FileInputStream(srcPath);FileOutputStream os = <span class="hljs-keyword">new</span> FileOutputStream(desPath)) {
+            <span class="hljs-keyword">byte</span>[] buf = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>];
+            <span class="hljs-keyword">int</span> length = -<span class="hljs-number">1</span>;
+            <span class="hljs-keyword">while</span> ((length = is.read(buf)) != -<span class="hljs-number">1</span>) {
+                os.write(buf, <span class="hljs-number">0</span>, length);
+            }
+        } <span class="hljs-keyword">catch</span> (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre><h4 data-source-line="250" id="带缓冲的流"><a class="markdownIt-Anchor" href="http://#带缓冲的流"></a>带缓冲的流</h4>
+<ul data-source-line="251">
 <li><code>BufferedReader</code> 带缓冲的字符输入流</li>
 </ul>
-<p data-source-line="252">特点: 读文本文件的时候, 可以一次读一行</p>
-<ul data-source-line="254">
+<p data-source-line="253">特点: 读文本文件的时候, 可以一次读一行</p>
+<ul data-source-line="255">
 <li><code>BufferedWriter</code> 带缓冲的字符输出流</li>
 </ul>
-<p data-source-line="256">特点: 使用 <code>flush()</code> 减少磁盘的写操作</p>
-<pre data-source-line="257"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BufferedDemo</span> </span>{
+<p data-source-line="257">特点: 使用 <code>flush()</code> 减少磁盘的写操作</p>
+<pre data-source-line="258"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BufferedDemo</span> </span>{
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
             <span class="hljs-comment">// <span class="zh-hans">数据流的转换</span></span>
             InputStream is = <span class="hljs-keyword">null</span>;  <span class="hljs-comment">// <span class="zh-hans">字节流是最根本的</span></span>
@@ -287,8 +288,8 @@
             writer.flush();
     }
 }
-</code></pre><h4 data-source-line="305" id="其他的流"><a class="markdownIt-Anchor" href="http://#其他的流"></a>其他的流</h4>
-<pre data-source-line="306"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> </span>{
+</code></pre><h4 data-source-line="306" id="其他的流"><a class="markdownIt-Anchor" href="http://#其他的流"></a>其他的流</h4>
+<pre data-source-line="307"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
         FileOutputStream fos = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">"objest.txt"</span>);
         <span class="hljs-comment">// <span class="zh-hans">对象输出流</span>, <span class="zh-hans">可以向流中写入对象</span></span>
@@ -306,7 +307,7 @@
         fos.close();
     }
 }
-</code></pre><pre data-source-line="326"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ObjectDemo</span> </span>{
+</code></pre><pre data-source-line="327"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ObjectDemo</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException, ClassNotFoundException </span>{
         FileInputStream fis = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">"objest.txt"</span>);
         ObjectInputStream ois = <span class="hljs-keyword">new</span> ObjectInputStream(fis);
@@ -326,7 +327,7 @@
         <span class="hljs-comment">// ......</span>
     }
 }
-</code></pre><pre data-source-line="348"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Goods</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span> </span>{    <span class="hljs-comment">// <span class="zh-hans">序列化</span></span>
+</code></pre><pre data-source-line="349"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Goods</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span> </span>{    <span class="hljs-comment">// <span class="zh-hans">序列化</span></span>
     <span class="hljs-keyword">private</span> String name;
     <span class="hljs-comment">// <span class="zh-hans">被</span>transient<span class="zh-hans">修饰的属性不会写入到数据流中</span></span>
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">transient</span> <span class="hljs-keyword">int</span> price;
@@ -355,8 +356,8 @@
         <span class="hljs-keyword">this</span>.price = price;
     }
 }
-</code></pre><h4 data-source-line="379" id="注意"><a class="markdownIt-Anchor" href="http://#注意"></a>注意</h4>
-<ul data-source-line="380">
+</code></pre><h4 data-source-line="380" id="注意"><a class="markdownIt-Anchor" href="http://#注意"></a>注意</h4>
+<ul data-source-line="381">
 <li><code>FileOutputStream</code> 把数据以 <mark>字节数组</mark> <code>getBytes()</code> 的形式写进媒体文件</li>
 <li>3个字节是一个汉字</li>
 <li><code>BufferedReader</code> 按行读数据, 使用于数据解析</li>

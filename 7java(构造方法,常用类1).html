@@ -21,7 +21,7 @@
 static修饰的方法可以直接通过类名调用</p>
 <p data-source-line="32">对象也可以调用静态的属性和方法, 但是一般不使用, 用类调</p>
 <h5 data-source-line="34" id="方法的格式"><a class="markdownIt-Anchor" href="http://#方法的格式"></a>方法的格式</h5>
-<pre data-source-line="35"><code class="hljs">0<span class="zh-hans">个或多个修饰符</span> <span class="zh-hans">返回值类型</span> <span class="zh-hans">方法名</span>(<span class="zh-hans">参数列表</span>){
+<pre data-source-line="35"><code class="hljs">0<span class="zh-hans">个或多个修饰符</span> <span class="zh-hans">泛型</span> <span class="zh-hans">返回值类型</span> <span class="zh-hans">方法名</span>(<span class="zh-hans">参数列表</span>){
     <span class="zh-hans">方法体</span>;
 }
 </code></pre><h5 data-source-line="40" id="方法的递归"><a class="markdownIt-Anchor" href="http://#方法的递归"></a>方法的递归</h5>
@@ -33,7 +33,7 @@ static修饰的方法可以直接通过类名调用</p>
 </code></pre><pre data-source-line="48"><code class="hljs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fi</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>{
     <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
     <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> fi(n - <span class="hljs-number">1</span>) + fi(n -<span class="hljs-number">2</span>);    <span class="hljs-comment">// <span class="zh-hans">斐波拉契</span></span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> fi(n - <span class="hljs-number">1</span>) + fi(n - <span class="hljs-number">2</span>);    <span class="hljs-comment">// <span class="zh-hans">斐波拉契</span></span>
 }
 </code></pre><h3 data-source-line="55" id="常用类"><a class="markdownIt-Anchor" href="http://#常用类"></a>常用类</h3>
 <ol data-source-line="56">
@@ -88,28 +88,22 @@ static修饰的方法可以直接通过类名调用</p>
 <li>时间日期</li>
 </ol>
 <pre data-source-line="106"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> <span class="hljs-keyword">throws</span> ParseException </span>{
         <span class="hljs-comment">// <span class="zh-hans">从</span>1970-01-01 00:00:00<span class="zh-hans">到此刻的毫秒数</span></span>
         System.out.println(System.currentTimeMillis());
-        <span class="hljs-comment">// ()<span class="zh-hans">里不填</span>, <span class="zh-hans">从</span>1970-01-01 00:00:00<span class="zh-hans">到此刻的毫秒数</span></span>
+
         Date date = <span class="hljs-keyword">new</span> Date();
         System.out.println(date.getTime());
         <span class="hljs-comment">// <span class="zh-hans">简单日期格式化</span></span>
-        SimpleDateFormat format = <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">"yyyy-MM-dd hh:mm:ss"</span>);
-        format.format(date);
-        System.out.println(format.format(date));
-        <span class="hljs-comment">// <span class="zh-hans">将日期变成毫秒</span></span>
+        System.out.println(<span class="hljs-keyword">new</span> SimpleDateFormat().format(date));    <span class="hljs-comment">// 18-7-29 <span class="zh-hans">下午</span>3:59</span>
+        System.out.println(<span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">"yyyy-MM-dd hh:mm:ss"</span>).format(date));   <span class="hljs-comment">// 2018-07-29 03:59:27</span>
+        <span class="hljs-comment">// <span class="zh-hans">将生日变成毫秒数</span></span>
         String s = <span class="hljs-string">"1996<span class="zh-hans">年</span>03<span class="zh-hans">月</span>17<span class="zh-hans">日</span>"</span>;
-        SimpleDateFormat format1 = <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">"yyyy<span class="zh-hans">年</span>MM<span class="zh-hans">月</span>dd<span class="zh-hans">日</span>"</span>);
-        <span class="hljs-keyword">try</span> {
-            <span class="hljs-keyword">final</span> Date parse = format1.parse(s);
-            System.out.println(parse.getTime());
-        } <span class="hljs-keyword">catch</span> (ParseException e) {
-            e.printStackTrace();
-        }
+        Date parse = <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">"yyyy<span class="zh-hans">年</span>MM<span class="zh-hans">月</span>dd<span class="zh-hans">日</span>"</span>).parse(s);
+        System.out.println(parse.getTime());    <span class="hljs-comment">// 826992000000</span>
     }
 }
-</code></pre><pre data-source-line="130"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> </span>{
+</code></pre><pre data-source-line="124"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
         <span class="hljs-keyword">long</span> date = System.currentTimeMillis();
         System.out.println(date);
@@ -122,5 +116,5 @@ static修饰的方法可以直接通过类名调用</p>
         System.out.println(format.format(date3));   <span class="hljs-comment">// <span class="zh-hans">最大</span>long<span class="zh-hans">型毫秒数</span>, <span class="zh-hans">的时间格式化</span></span>
     }
 }
-</code></pre><p data-source-line="145"><code>native</code> 关键字 用 C/C++ 写的</p>
+</code></pre><p data-source-line="139"><code>native</code> 关键字 用 C/C++ 写的</p>
 </div></article><body></body></html>
